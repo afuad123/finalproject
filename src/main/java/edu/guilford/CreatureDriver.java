@@ -14,12 +14,29 @@ import java.io.IOException;
 public class CreatureDriver extends Application {
 
     private static Scene scene;
+    private int sceneWidth = 800;
+    private int sceneHeight = 600;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        SimulationPane root = new SimulationPane();
+        scene = new Scene(root, sceneWidth, sceneHeight);
         stage.setScene(scene);
         stage.show();
+
+       
+        //window for controls
+        Stage controlStage = new Stage();
+        //build an FXMLLoader object that will load the FXML file and interact with the controller class
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("control.fxml"));
+        Parent controlRoot = loader.load();
+        ControlController controlController = loader.getController();
+        // pass the shapepane object to the controlcontroller object
+        controlController.setSimulationPane(root);
+        
+        Scene controlScene = new Scene(controlRoot, 300, 200);
+        controlStage.setScene(controlScene);
+        controlStage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
