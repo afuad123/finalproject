@@ -49,5 +49,14 @@ public class ControlController {
         this.simulationPane = simulationPane;
     }
 
+    /**
+     * A method that adds a new object to the simulation
+     * @throws IOException
+     */
+    @FXML
+    public void add() throws IOException {
+        simulationPane.addCreature();
+    }
+
 
 }
