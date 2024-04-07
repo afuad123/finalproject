@@ -34,7 +34,7 @@ public class CreatureDriver extends Application {
         // pass the shapepane object to the controlcontroller object
         controlController.setSimulationPane(root);
         
-        Scene controlScene = new Scene(controlRoot, 300, 200);
+        Scene controlScene = new Scene(controlRoot, 500, 500);
         controlStage.setScene(controlScene);
         controlStage.show();
     }

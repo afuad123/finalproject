@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -22,6 +24,11 @@
       <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="116.0" text="Add object" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Slider maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" GridPane.rowIndex="2" />
       <ChoiceBox prefWidth="150.0" GridPane.rowIndex="1" />
-      <Label alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" text="Welcome to the Creature Game!   The objective is to keep the ecosystem alive as long as possible.     You may add different objects to the game and modify their characteristics using the slider " GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Label text="Ecosystem Simulator Game" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+         <image>
+            <Image url="@images.png" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>
