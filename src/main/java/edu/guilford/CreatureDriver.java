@@ -14,13 +14,16 @@ import java.io.IOException;
 public class CreatureDriver extends Application {
 
     private static Scene scene;
-    private int sceneWidth = 800;
+    private int sceneWidth = 600;
     private int sceneHeight = 600;
 
     @Override
     public void start(Stage stage) throws IOException {
         SimulationPane root = new SimulationPane();
         scene = new Scene(root, sceneWidth, sceneHeight);
+        stage.setTitle("Creature Simulation");
+        stage.setX(875);
+        stage.setY(150);
         stage.setScene(scene);
         stage.show();
 
@@ -34,7 +37,11 @@ public class CreatureDriver extends Application {
         // pass the shapepane object to the controlcontroller object
         controlController.setSimulationPane(root);
         
-        Scene controlScene = new Scene(controlRoot, 500, 500);
+        Scene controlScene = new Scene(controlRoot, 600, 600);
+        controlStage.setTitle("Controls");
+        //set x and y position of the control window
+        controlStage.setX(225);
+        controlStage.setY(150);
         controlStage.setScene(controlScene);
         controlStage.show();
     }
