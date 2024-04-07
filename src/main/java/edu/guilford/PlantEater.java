@@ -38,7 +38,7 @@ public class PlantEater extends Critter {
      * @param plant the Plant object to be chewed on
      */
     public void chew(Plant plant) {
-        float amount = rand.nextFloat(plant.getSize()) / 2;
+        float amount = (rand.nextFloat() * plant.getSize()) / 2;
         plant.chewedOn(amount);
         eat(amount);
         size += amount;
