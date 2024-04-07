@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 
 /**
  * A class that generates the control window that controls the simulation.
@@ -24,23 +25,60 @@ public class ControlController {
 
     @FXML
     /**
-     * A button that adds a new creature to the simulation
+     * A button that adds a new plant to the simulation
      */
-    private Button addButton;
+    private Button plantButton;
 
     @FXML
     /**
-     * A slider that changes the amount of objects to add
+     * A button that adds a new plant eater to the simulation
      */
-    private Slider attributeSlider;
+    private Button plantEaterButton;
 
     @FXML
     /**
-     * A choicebox that allows the user to choose the type of object to add
+     * A button that adds a new meat eater to the simulation
      */
-    private ChoiceBox<?> choiceBox;
+    private Button meatEaterButton;
 
-    
+
+    /**
+     * A textfield that contains the size of the plant object
+     */
+    @FXML
+    private TextField plantSize;
+
+
+    /**
+     * A textfield that contains the rate of growth of the plant object
+     */
+    @FXML
+    private TextField plantRate;
+
+    /** 
+     * A textfield that contains the size of the plant eater object
+     */
+    @FXML
+    private TextField plantEaterSize;
+
+    /**
+     * A textfield that contains the rate of growth of the plant eater object
+     */
+    @FXML
+    private TextField plantEaterRate;
+
+    /** 
+     * A textfield that contains the size of the meat eater object
+     */
+    @FXML
+    private TextField meatEaterSize;
+
+    /**
+     * A textfield that contains the rate of growth of the meat eater object
+     */
+    @FXML
+    private TextField meatEaterRate;
+  
     /**
      * A setter for SimulationPane
      * @param simulationPane the new value of simulationPane

@@ -24,15 +24,15 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Add Plant Eater" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="plantEaterButton" mnemonicParsing="false" text="Add Plant Eater" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Label text="Ecosystem Simulator Game" />
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
          <image>
             <Image url="@images.png" />
          </image>
       </ImageView>
-      <Button mnemonicParsing="false" text="Add Plant" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" text="Add Meat Eater" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="plantButton" mnemonicParsing="false" text="Add Plant" GridPane.rowIndex="3" />
+      <Button fx:id="meatEaterButton" mnemonicParsing="false" text="Add Meat Eater" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label text="Created by: A. Fuad" GridPane.columnIndex="2" />
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.rowIndex="2">
         <items>
@@ -43,7 +43,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantRate" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -57,7 +57,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantEaterRate" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -71,7 +71,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="58.0" layoutY="22.0" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="meatEaterRate" layoutX="58.0" layoutY="22.0" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -85,7 +85,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="59.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantSize" layoutX="59.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -99,7 +99,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantEaterSize" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -113,7 +113,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="meatEaterSize" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
