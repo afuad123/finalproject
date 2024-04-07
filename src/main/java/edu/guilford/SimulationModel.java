@@ -67,7 +67,6 @@ public class SimulationModel {
         for (Plant p : plants) {
             p.simulateDay();
         }
-
         for (PlantEater pe : plantEaters) {
             pe.simulateDay();
         }
@@ -75,5 +74,32 @@ public class SimulationModel {
             me.simulateDay();
         }
         
+    }
+
+    /**
+     * A method that adds a new plant object to the simulation
+     * @param size the size of the new plant object (in g)
+     * @param rate the rate of growth of the new plant object (in g/day)
+     */
+    public void addPlant(float size, float rate) {
+        plants.add(new Plant(size, rate));
+    }
+
+    /**
+     * A method that adds a new meat eater object to the simulation
+     * @param size the size of the new meat eater object (in g)
+     * @param rate the rate of growth of the new meat eater object (in g/day)
+     */
+    public void addMeatEater(float size, float rate) {
+        meatEaters.add(new MeatEater(size, rate, (15*size)/100));
+    }
+
+    /**
+     * A method that adds a new plant eater object to the simulation
+     * @param size the size of the new plant eater object (in g)
+     * @param rate the rate of growth of the new plant eater object (in g/day)
+     */
+    public void addPlantEater(float size, float rate) {
+        plantEaters.add(new PlantEater(size, rate, (15*size)/100, plants.toArray(new Plant[plants.size()])));
     }
 }

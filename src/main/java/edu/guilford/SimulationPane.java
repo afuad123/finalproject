@@ -20,6 +20,7 @@ public class SimulationPane extends GridPane {
      * A method that adds a new creature to the simulation
      */
     public void addCreature() {
+        
 
     }
 
