@@ -111,11 +111,28 @@ public class ControlController {
     //     });
     // }
 
+    @FXML
     public void submitPlant() {
         float size = Float.parseFloat(plantSize.getText());
         float rate = Float.parseFloat(plantRate.getText());
         simulationPane.addPlant(size, rate, model);
         testLabel.setText("Plant added");
+    }
+
+    @FXML
+    public void submitPlantEater() {
+        float size = Float.parseFloat(plantEaterSize.getText());
+        float rate = Float.parseFloat(plantEaterRate.getText());
+        simulationPane.addPlantEater(size, rate, model);
+        testLabel.setText("Plant eater added");
+    }
+
+    @FXML
+    public void submitMeatEater() {
+        float size = Float.parseFloat(meatEaterSize.getText());
+        float rate = Float.parseFloat(meatEaterRate.getText());
+        simulationPane.addMeatEater(size, rate, model);
+        testLabel.setText("Meat eater added");
     }
 
     
