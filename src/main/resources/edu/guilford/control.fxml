@@ -22,6 +22,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Button fx:id="plantEaterButton" mnemonicParsing="false" text="Add Plant Eater" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -31,7 +32,7 @@
             <Image url="@images.png" />
          </image>
       </ImageView>
-      <Button fx:id="plantButton" mnemonicParsing="false" text="Add Plant" GridPane.rowIndex="3" />
+      <Button fx:id="plantButton" mnemonicParsing="false" onAction="#submitPlant" text="Add Plant" GridPane.rowIndex="3" />
       <Button fx:id="meatEaterButton" mnemonicParsing="false" text="Add Meat Eater" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label text="Created by: A. Fuad" GridPane.columnIndex="2" />
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.rowIndex="2">
@@ -118,5 +119,6 @@
             </AnchorPane>
         </items>
       </SplitPane>
+      <Label fx:id="testLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    </children>
 </GridPane>

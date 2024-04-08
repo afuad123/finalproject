@@ -1,5 +1,6 @@
 package edu.guilford;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -12,6 +13,11 @@ import javafx.scene.layout.GridPane;
 
 public class SimulationPane extends GridPane {
 
+    /**
+     * A reference to the simulation model that is displayed by this pane
+     */
+    SimulationModel model;
+
     public SimulationPane() {
         super();
     }
@@ -22,6 +28,23 @@ public class SimulationPane extends GridPane {
     public void addCreature() {
         
 
+    }
+
+    public void addPlant(float size, float rate, SimulationModel model) {
+        model.addPlant(size, rate);
+        Label testLabel = new Label("Plant added");
+        this.add(testLabel, 0, 0);
+        
+    }
+
+    public void addPlantEater(float size, float rate, SimulationModel model) {
+        model.addPlantEater(size, rate);
+        
+    }
+
+    public void addMeatEater(float size, float rate, SimulationModel model) {
+        model.addMeatEater(size, rate);
+        
     }
 
     

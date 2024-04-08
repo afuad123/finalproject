@@ -1,10 +1,8 @@
 package edu.guilford;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Slider;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -22,6 +20,11 @@ public class ControlController {
      * A reference to the simulation pane that is controlled by this controller
      */
     private SimulationPane simulationPane;
+
+    /**
+     * A reference to the simulation model that is controlled by this controller
+     */
+    private SimulationModel model;
 
     @FXML
     /**
@@ -78,6 +81,9 @@ public class ControlController {
      */
     @FXML
     private TextField meatEaterRate;
+
+    @FXML
+    private Label testLabel;
   
     /**
      * A setter for SimulationPane
@@ -87,14 +93,31 @@ public class ControlController {
         this.simulationPane = simulationPane;
     }
 
-    /**
-     * A method that adds a new object to the simulation
-     * @throws IOException
-     */
-    @FXML
-    public void add() throws IOException {
-        simulationPane.addCreature();
+    // /**
+    //  * A method that initializes the control window
+    //  */
+    // @FXML
+    // public void initialize() {
+    //     plantButton.setOnAction(e -> {
+    //         simulationPane.addPlant(Integer.parseInt(plantSize.getText()), Integer.parseInt(plantRate.getText()));
+    //     });
+
+    //     plantEaterButton.setOnAction(e -> {
+    //         simulationPane.addPlantEater(Integer.parseInt(plantEaterSize.getText()), Integer.parseInt(plantEaterRate.getText()));
+    //     });
+
+    //     meatEaterButton.setOnAction(e -> {
+    //         simulationPane.addMeatEater(Integer.parseInt(meatEaterSize.getText()), Integer.parseInt(meatEaterRate.getText()));
+    //     });
+    // }
+
+    public void submitPlant() {
+        float size = Float.parseFloat(plantSize.getText());
+        float rate = Float.parseFloat(plantRate.getText());
+        simulationPane.addPlant(size, rate, model);
+        testLabel.setText("Plant added");
     }
 
+    
 
 }
