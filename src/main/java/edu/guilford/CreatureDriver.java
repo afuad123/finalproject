@@ -19,6 +19,7 @@ public class CreatureDriver extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        SimulationModel model = new SimulationModel();
         SimulationPane root = new SimulationPane();
         scene = new Scene(root, sceneWidth, sceneHeight);
         stage.setTitle("Creature Simulation");
@@ -36,6 +37,7 @@ public class CreatureDriver extends Application {
         ControlController controlController = loader.getController();
         // pass the shapepane object to the controlcontroller object
         controlController.setSimulationPane(root);
+        controlController.setModel(model);
         
         Scene controlScene = new Scene(controlRoot, 600, 600);
         controlStage.setTitle("Controls");

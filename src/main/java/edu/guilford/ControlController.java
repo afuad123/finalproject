@@ -93,6 +93,10 @@ public class ControlController {
         this.simulationPane = simulationPane;
     }
 
+    public void setModel(SimulationModel model) {
+        this.model = model;
+    }
+
     // /**
     //  * A method that initializes the control window
     //  */

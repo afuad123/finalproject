@@ -60,6 +60,10 @@ public class SimulationModel {
         }
     }
 
+    public SimulationModel() {
+        
+    }
+
     /**
      * A method that simulates a day in the simulation; it first simulates a day for each plant object, then for each plant eater object, and finally for each meat eater object
      */
