@@ -18,18 +18,19 @@ public class SimulationPane extends GridPane {
      */
     SimulationModel model;
 
+    /**
+     * A constructor that sets up the simulation pane
+     */
     public SimulationPane() {
         super();
     }
 
-    /**
-     * A method that adds a new creature to the simulation
-     */
-    public void addCreature() {
-        
-
-    }
-
+   /**
+    * A method that adds a plant object to the simulation
+    * @param size the size of the plant object
+    * @param rate the rate of growth of the plant object
+    * @param model the simulation model that contains the plant object
+    */
     public void addPlant(float size, float rate, SimulationModel model) {
         model.addPlant(size, rate);
         Label testLabel = new Label("Plant added with size: " + size + " g and rate: " + rate + " g/day");
@@ -37,13 +38,25 @@ public class SimulationPane extends GridPane {
         
     }
 
+    /**
+     * A method that adds a plant eater object to the simulation
+     * @param size the size of the plant eater object
+     * @param rate the rate of growth of the plant eater object
+     * @param model the simulation model that contains the plant eater object
+     */
     public void addPlantEater(float size, float rate, SimulationModel model) {
         model.addPlantEater(size, rate);
         Label testLabel = new Label("Plant eater added with size: " + size + " g and rate: " + rate + " g/day");
-        this.add(testLabel, 0, 2);
+        this.add(testLabel, 0, 1);
         
     }
 
+    /**
+     * A method that adds a meat eater object to the simulation
+     * @param size the size of the meat eater object
+     * @param rate the rate of growth of the meat eater object
+     * @param model the simulation model that contains the meat eater object
+     */
     public void addMeatEater(float size, float rate, SimulationModel model) {
         model.addMeatEater(size, rate);
         Label testLabel = new Label("Meat eater added with size: " + size + " g and rate: " + rate + " g/day");

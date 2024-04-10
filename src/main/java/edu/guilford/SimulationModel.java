@@ -48,18 +48,21 @@ public class SimulationModel {
      * @param plantEaterSize the initial size of the plant eater objects (in g)
      * @param plantEaterRate the initial rate of growth of the plant eater objects (in g/day)
      * */ 
-    public SimulationModel(int numPlants, int numMeatEaters, int numPlantEaters, float plantSize, float plantRate, float meatEaterSize, float meatEaterRate, float plantEaterSize, float plantEaterRate) {
-        for (int i = 0; i < numPlants; i++) {
-            plants.add(new Plant(plantSize, plantRate));
-        }
-        for (int i = 0; i < numMeatEaters; i++) {
-            meatEaters.add(new MeatEater(meatEaterSize, meatEaterRate, (15*meatEaterSize)/100));
-        }
-        for (int i = 0; i < numPlantEaters; i++) {
-            plantEaters.add(new PlantEater(plantEaterSize, plantEaterRate, (15*plantEaterSize)/100, plants.toArray(new Plant[plants.size()])));
-        }
-    }
-
+    // public SimulationModel(int numPlants, int numMeatEaters, int numPlantEaters, float plantSize, float plantRate, float meatEaterSize, float meatEaterRate, float plantEaterSize, float plantEaterRate) {
+    //     for (int i = 0; i < numPlants; i++) {
+    //         plants.add(new Plant(plantSize, plantRate));
+    //     }
+    //     for (int i = 0; i < numMeatEaters; i++) {
+    //         meatEaters.add(new MeatEater(meatEaterSize, meatEaterRate, (15*meatEaterSize)/100));
+    //     }
+    //     for (int i = 0; i < numPlantEaters; i++) {
+    //         plantEaters.add(new PlantEater(plantEaterSize, plantEaterRate, (15*plantEaterSize)/100, plants.toArray(new Plant[plants.size()])));
+    //     }
+    // }
+    
+    /**
+     * A constructor that sets up the simulation model.
+     */
     public SimulationModel() {
         
     }

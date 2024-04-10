@@ -88,8 +88,7 @@ public class ControlController {
     @FXML
     private TextField meatEaterRate;
 
-    @FXML
-    private Label testLabel;
+  
   
     /**
      * A setter for SimulationPane
@@ -99,6 +98,10 @@ public class ControlController {
         this.simulationPane = simulationPane;
     }
 
+    /**
+     * A setter for SimulationModel
+     * @param model the new value of model
+     */
     public void setModel(SimulationModel model) {
         this.model = model;
     }
@@ -121,11 +124,20 @@ public class ControlController {
     //     });
     // }
 
+
+    /**
+     * A method that clears the simulation pane
+     * @param e the event that triggers the method (a button click)
+     */
     @FXML 
     public void clearSimulation() {
         simulationPane.getChildren().clear();
     }
 
+    /**
+     * A method that adds a new plant object to the simulation
+     * @param e the event that triggers the method (a button click)
+     */
     @FXML
     public void submitPlant() {
         float size = Float.parseFloat(plantSize.getText());
@@ -134,6 +146,10 @@ public class ControlController {
         //testLabel.setText("Plant added");
     }
 
+    /**
+     * A method that adds a new plant eater object to the simulation
+     * @param e the event that triggers the method (a button click)
+     */
     @FXML
     public void submitPlantEater() {
         float size = Float.parseFloat(plantEaterSize.getText());
@@ -142,6 +158,10 @@ public class ControlController {
         //testLabel.setText("Plant eater added");
     }
 
+    /**
+     * A method that adds a new meat eater object to the simulation
+     * @param e the event that triggers the method (a button click)
+     */
     @FXML
     public void submitMeatEater() {
         float size = Float.parseFloat(meatEaterSize.getText());
