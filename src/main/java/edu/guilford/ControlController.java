@@ -28,6 +28,12 @@ public class ControlController {
 
     @FXML
     /**
+     * A button that clears the SimulationPane
+     */
+    private Button clearButton;
+
+    @FXML
+    /**
      * A button that adds a new plant to the simulation
      */
     private Button plantButton;
@@ -115,12 +121,17 @@ public class ControlController {
     //     });
     // }
 
+    @FXML 
+    public void clearSimulation() {
+        simulationPane.getChildren().clear();
+    }
+
     @FXML
     public void submitPlant() {
         float size = Float.parseFloat(plantSize.getText());
         float rate = Float.parseFloat(plantRate.getText());
         simulationPane.addPlant(size, rate, model);
-        testLabel.setText("Plant added");
+        //testLabel.setText("Plant added");
     }
 
     @FXML
@@ -128,7 +139,7 @@ public class ControlController {
         float size = Float.parseFloat(plantEaterSize.getText());
         float rate = Float.parseFloat(plantEaterRate.getText());
         simulationPane.addPlantEater(size, rate, model);
-        testLabel.setText("Plant eater added");
+        //testLabel.setText("Plant eater added");
     }
 
     @FXML
@@ -136,7 +147,7 @@ public class ControlController {
         float size = Float.parseFloat(meatEaterSize.getText());
         float rate = Float.parseFloat(meatEaterRate.getText());
         simulationPane.addMeatEater(size, rate, model);
-        testLabel.setText("Meat eater added");
+        //testLabel.setText("Meat eater added");
     }
 
     

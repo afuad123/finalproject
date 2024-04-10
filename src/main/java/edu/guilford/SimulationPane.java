@@ -32,18 +32,22 @@ public class SimulationPane extends GridPane {
 
     public void addPlant(float size, float rate, SimulationModel model) {
         model.addPlant(size, rate);
-        Label testLabel = new Label("Plant added");
+        Label testLabel = new Label("Plant added with size: " + size + " g and rate: " + rate + " g/day");
         this.add(testLabel, 0, 0);
         
     }
 
     public void addPlantEater(float size, float rate, SimulationModel model) {
         model.addPlantEater(size, rate);
+        Label testLabel = new Label("Plant eater added with size: " + size + " g and rate: " + rate + " g/day");
+        this.add(testLabel, 0, 2);
         
     }
 
     public void addMeatEater(float size, float rate, SimulationModel model) {
         model.addMeatEater(size, rate);
+        Label testLabel = new Label("Meat eater added with size: " + size + " g and rate: " + rate + " g/day");
+        this.add(testLabel, 0, 4);
         
     }
 
