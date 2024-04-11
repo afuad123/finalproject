@@ -19,6 +19,11 @@ public class SimulationPane extends GridPane {
     SimulationModel model;
 
     /**
+     * The row in the grid pane where the next object will be added
+     */
+    private int row = 0;
+
+    /**
      * A constructor that sets up the simulation pane
      */
     public SimulationPane() {
@@ -33,8 +38,9 @@ public class SimulationPane extends GridPane {
     */
     public void addPlant(float size, float rate, SimulationModel model) {
         model.addPlant(size, rate);
-        Label testLabel = new Label("Plant added with size: " + size + " g and rate: " + rate + " g/day");
-        this.add(testLabel, 0, 0);
+        Label testLabel = new Label("Plant added. Plant population is now: " + model.getPlants().size() + " plants");
+        this.add(testLabel, 0, row);
+        row++;
         
     }
 
@@ -46,8 +52,9 @@ public class SimulationPane extends GridPane {
      */
     public void addPlantEater(float size, float rate, SimulationModel model) {
         model.addPlantEater(size, rate);
-        Label testLabel = new Label("Plant eater added with size: " + size + " g and rate: " + rate + " g/day");
-        this.add(testLabel, 0, 1);
+        Label testLabel = new Label("Plant eater added. Plant eater population is now: " + model.getPlantEaters().size() + " plant eaters");
+        this.add(testLabel, 0, row);
+        row++;
         
     }
 
@@ -59,9 +66,21 @@ public class SimulationPane extends GridPane {
      */
     public void addMeatEater(float size, float rate, SimulationModel model) {
         model.addMeatEater(size, rate);
-        Label testLabel = new Label("Meat eater added with size: " + size + " g and rate: " + rate + " g/day");
-        this.add(testLabel, 0, 4);
+        Label testLabel = new Label("Meat eater added. Meat eater population is now: " + model.getMeatEaters().size() + " meat eaters");
+        this.add(testLabel, 0, row);
+        row++;
         
+    }
+
+    /**
+     * A simulate day method that simulates a day in the simulation
+     * @param model the simulation model that is being simulated
+     */
+    public void simulateDay(SimulationModel model) {
+        model.simulateDay();
+        Label testLabel = new Label("One day has been simulated.");
+        this.add(testLabel, 0, row);
+        row++;
     }
 
     

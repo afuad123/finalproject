@@ -50,6 +50,24 @@ public class ControlController {
      */
     private Button meatEaterButton;
 
+    /**
+     * A button that makes a plant eater object chew a plant object
+     */
+    @FXML
+    private Button chewButton;
+
+    /**
+     * A button that makes a meat eater object eat a plant eater object
+     */
+    @FXML
+    private Button eatButton;
+
+    /**
+     * A button that allows the user to simulate a day in the simulation. 
+     */
+    @FXML 
+    private Button simulateDayButton;
+
 
     /**
      * A textfield that contains the size of the plant object
@@ -168,6 +186,15 @@ public class ControlController {
         float rate = Float.parseFloat(meatEaterRate.getText());
         simulationPane.addMeatEater(size, rate, model);
         //testLabel.setText("Meat eater added");
+    }
+
+    /**
+     * A method that makes the simulation experience a day
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void simulateDay() {
+        simulationPane.simulateDay(model);
     }
 
     

@@ -77,9 +77,9 @@ public class SimulationModel {
         for (PlantEater pe : plantEaters) {
             pe.simulateDay();
         }
-        for (MeatEater me : meatEaters) {
-            me.simulateDay();
-        }
+        // for (MeatEater me : meatEaters) {
+        //     me.simulateDay();
+        // }
         
     }
 
@@ -91,6 +91,32 @@ public class SimulationModel {
     public void addPlant(float size, float rate) {
         plants.add(new Plant(size, rate));
     }
+
+    /**
+     * A method that returns the list of plant objects in the simulation
+     * @return the list of plant objects in the simulation
+     */
+    public List<Plant> getPlants() {
+        return plants; 
+    }
+
+    /**
+     * A method that returns the list of plant eater objects in the simulation
+     * @return the list of plant eater objects in the simulation
+     */
+    public List<PlantEater> getPlantEaters() {
+        return plantEaters; 
+    }
+
+    /**
+     * A method that returns the list of meat eater objects in the simulation
+     * @return the list of meat eater objects in the simulation
+     */
+    public List<MeatEater> getMeatEaters() {
+        return meatEaters; 
+    }
+
+    
 
     /**
      * A method that adds a new meat eater object to the simulation
