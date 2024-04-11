@@ -83,6 +83,27 @@ public class SimulationPane extends GridPane {
         row++;
     }
 
+    /**
+     * A method that displays the total plant population size, age, and average growth rate
+     * @param model the simulation model that contains the plant objects
+     */
+    public void plantStats(SimulationModel model) {
+        int plantPop = model.getPlants().size();
+        float popAge = 0;
+        float plantGrowthRate = 0;
+        for (Plant p : model.getPlants()) {
+            popAge += p.getAge();
+            plantGrowthRate += p.getRate();
+        }
+        plantGrowthRate = plantGrowthRate / plantPop;
+        Label testLabel = new Label("Total plant population size: " + plantPop + " plants. Population age: " + popAge + " days. Average growth rate: " + plantGrowthRate + " g/day");
+        this.add(testLabel, 0, row);
+        row++;
+    }
+    
+    
+
+
     
 
 }

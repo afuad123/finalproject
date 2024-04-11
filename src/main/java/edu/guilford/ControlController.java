@@ -63,11 +63,28 @@ public class ControlController {
     private Button eatButton;
 
     /**
-     * A button that allows the user to simulate a day in the simulation. 
+     * A button that allows the user to simulate a day in the simulation
      */
     @FXML 
     private Button simulateDayButton;
 
+    /**
+     * A button that allows the user to view plant stats after simulating a day
+     */
+    @FXML
+    private Button plantStatsButton;
+
+    /**
+     * A button that allows the user to view plant eater stats after simulating a day
+     */
+    @FXML
+    private Button plantEaterStatsButton;
+
+    /**
+     * A button that allows the user to view meat eater stats after simulating a day
+     */
+    @FXML
+    private Button meatEaterStatsButton;
 
     /**
      * A textfield that contains the size of the plant object
@@ -195,6 +212,15 @@ public class ControlController {
     @FXML
     public void simulateDay() {
         simulationPane.simulateDay(model);
+    }
+
+    /**
+     * A method that allows the user to view the stats of the plant objects after simulating a day
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void viewPlantStats() {
+        simulationPane.plantStats(model);
     }
 
     

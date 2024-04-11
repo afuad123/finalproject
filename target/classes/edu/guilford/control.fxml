@@ -19,15 +19,16 @@
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Button fx:id="plantEaterButton" mnemonicParsing="false" onAction="#submitPlantEater" text="Add Plant Eater" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Label text="Ecosystem Simulator Game" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+      <ImageView fitHeight="78.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
          <image>
             <Image url="@images.png" />
          </image>
@@ -119,8 +120,11 @@
         </items>
       </SplitPane>
       <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearSimulation" text="Clear" GridPane.columnIndex="2" />
-      <Button fx:id="eatButton" mnemonicParsing="false" text="Make MeatEater Eat" GridPane.rowIndex="4" />
-      <Button fx:id="chewButton" mnemonicParsing="false" text="Make PlantEater Chew" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day For Simulation" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="eatButton" mnemonicParsing="false" text="Make MeatEater Eat" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="chewButton" mnemonicParsing="false" text="Make PlantEater Chew" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day For Simulation" GridPane.rowIndex="4" />
+      <Button fx:id="plantStatsButton" mnemonicParsing="false" onAction="#viewPlantStats" text="View Plant Stats" GridPane.rowIndex="5" />
+      <Button fx:id="plantEaterStatsButton" mnemonicParsing="false" text="View PlantEater Stats" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button fx:id="meatEaterStatsButton" mnemonicParsing="false" text="View MeatEater Stats" GridPane.columnIndex="2" GridPane.rowIndex="5" />
    </children>
 </GridPane>
