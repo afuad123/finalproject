@@ -84,26 +84,58 @@ public class SimulationPane extends GridPane {
     }
 
     /**
-     * A method that displays the total plant population size, age, and average growth rate
+     * A method that displays the total plant population size and average growth rate
      * @param model the simulation model that contains the plant objects
      */
     public void plantStats(SimulationModel model) {
         int plantPop = model.getPlants().size();
-        float popAge = 0;
         float plantGrowthRate = 0;
         for (Plant p : model.getPlants()) {
-            popAge += p.getAge();
             plantGrowthRate += p.getRate();
         }
-        plantGrowthRate = plantGrowthRate / plantPop;
-        Label testLabel = new Label("Total plant population size: " + plantPop + " plants. Population age: " + popAge + " days. Average growth rate: " + plantGrowthRate + " g/day");
+        plantGrowthRate /= plantPop;
+        Label testLabel = new Label("Total plant population size: " + plantPop + " plants. Average growth rate: " + plantGrowthRate + " g/day");
         this.add(testLabel, 0, row);
         row++;
     }
-    
-    
 
+    /**
+     * A method that displays the total plant eater population size, average growth rate, and average food need
+     * @param model the simulation model that contains the plant eater objects
+     */
+    public void plantEaterStats(SimulationModel model) {
+        int plantEaterPop = model.getPlantEaters().size();
+        float plantEaterGrowthRate = 0;
+        float foodNeed = 0;
+        for (PlantEater p : model.getPlantEaters()) {
+            plantEaterGrowthRate += p.getRate();
+            foodNeed += p.getFoodNeed();
+        }
+        plantEaterGrowthRate /= plantEaterPop;
+        foodNeed /= plantEaterPop;
+        Label testLabel = new Label("Total plant eater population size: " + plantEaterPop + " plant eaters. Average growth rate: " + plantEaterGrowthRate + " g/day" + " Average food need: " + foodNeed + " g/day");
+        this.add(testLabel, 0, row);
+        row++;
+    }
 
-    
+    /**
+     * A method that displays the total meat eater population size, average growth rate, and average food need
+     * @param model the simulation model that contains the meat eater objects
+     */
+    public void meatEaterStats(SimulationModel model) {
+        int meatEaterPop = model.getMeatEaters().size();
+        float meatEaterGrowthRate = 0;
+        float foodNeed = 0;
+        for (MeatEater p : model.getMeatEaters()) {
+            meatEaterGrowthRate += p.getRate();
+            foodNeed += p.getFoodNeed();
+        }
+        meatEaterGrowthRate /= meatEaterPop;
+        foodNeed /= meatEaterPop;
+        Label testLabel = new Label("Total meat eater population size: " + meatEaterPop + " meat eaters. Average growth rate: "  + meatEaterGrowthRate + " g/day" + " Average food need: " + foodNeed + " g/day");
+        this.add(testLabel, 0, row);
+        row++;
+    }
+       
 
 }

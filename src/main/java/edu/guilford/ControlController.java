@@ -223,6 +223,24 @@ public class ControlController {
         simulationPane.plantStats(model);
     }
 
+    /**
+     * A method that allows the user to view the stats of the plant eater objects after simulating a day
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void viewPlantEaterStats() {
+        simulationPane.plantEaterStats(model);
+    }
+
+    /**
+     * A method that allows the user to view the stats of the meat eater objects after simulating a day
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void viewMeatEaterStats() {
+        simulationPane.meatEaterStats(model);
+    }
+
     
 
 }
