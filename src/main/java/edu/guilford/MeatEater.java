@@ -24,7 +24,7 @@ public class MeatEater extends Critter {
      * @param rate  the initial rate of growth of the object (in g/day)
      * @param foodNeed the amount of food the object needs each day (in g)
      */
-    public MeatEater(float size, float rate, float foodNeed) {
+    public MeatEater(float size, float rate, float foodNeed, PlantEater[] plantEaters) {
         super(size, rate, foodNeed);
         
     }

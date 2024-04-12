@@ -24,6 +24,12 @@ public class SimulationModel {
      * A list of plant objects that are the first plants in the simulation
      */
     private List<Plant> plants = new ArrayList<Plant>();
+
+
+    /**
+     * A list of plant eater objects that are in the simulation
+     */
+    private List<PlantEater> plantEaters = new ArrayList<PlantEater>();
     
 
     /**
@@ -31,10 +37,6 @@ public class SimulationModel {
      */
     private List<MeatEater> meatEaters = new ArrayList<MeatEater>();
 
-    /**
-     * A list of plant eater objects that are in the simulation
-     */
-    private List<PlantEater> plantEaters = new ArrayList<PlantEater>();
 
     /** 
      * A constructor that sets up the simulation model.
@@ -92,6 +94,25 @@ public class SimulationModel {
         plants.add(new Plant(size, rate));
     }
 
+     /**
+     * A method that adds a new plant eater object to the simulation
+     * @param size the size of the new plant eater object (in g)
+     * @param rate the rate of growth of the new plant eater object (in g/day)
+     */
+    public void addPlantEater(float size, float rate) {
+        plantEaters.add(new PlantEater(size, rate, (15*size)/100, plants.toArray(new Plant[plants.size()])));
+    }
+
+     /**
+     * A method that adds a new meat eater object to the simulation
+     * @param size the size of the new meat eater object (in g)
+     * @param rate the rate of growth of the new meat eater object (in g/day)
+     */
+    public void addMeatEater(float size, float rate, PlantEater[] plantEaters) {
+        meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantEaters));
+    }
+
+
     /**
      * A method that returns the list of plant objects in the simulation
      * @return the list of plant objects in the simulation
@@ -118,21 +139,8 @@ public class SimulationModel {
 
     
 
-    /**
-     * A method that adds a new meat eater object to the simulation
-     * @param size the size of the new meat eater object (in g)
-     * @param rate the rate of growth of the new meat eater object (in g/day)
-     */
-    public void addMeatEater(float size, float rate) {
-        meatEaters.add(new MeatEater(size, rate, (15*size)/100));
-    }
+   
 
-    /**
-     * A method that adds a new plant eater object to the simulation
-     * @param size the size of the new plant eater object (in g)
-     * @param rate the rate of growth of the new plant eater object (in g/day)
-     */
-    public void addPlantEater(float size, float rate) {
-        plantEaters.add(new PlantEater(size, rate, (15*size)/100, plants.toArray(new Plant[plants.size()])));
-    }
 }
+
+   

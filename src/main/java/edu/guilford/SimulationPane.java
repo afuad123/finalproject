@@ -24,6 +24,11 @@ public class SimulationPane extends GridPane {
     private int row = 0;
 
     /**
+     * An array of PlantEater objects that the meat eater object can chase and eat
+     */
+    private PlantEater[] plantEaters;
+
+    /**
      * A constructor that sets up the simulation pane
      */
     public SimulationPane() {
@@ -52,6 +57,7 @@ public class SimulationPane extends GridPane {
      */
     public void addPlantEater(float size, float rate, SimulationModel model) {
         model.addPlantEater(size, rate);
+        plantEaters = model.getPlantEaters().toArray(new PlantEater[model.getPlantEaters().size()]);
         Label testLabel = new Label("Plant eater added. Plant eater population is now: " + model.getPlantEaters().size() + " plant eaters");
         this.add(testLabel, 0, row);
         row++;
@@ -65,7 +71,7 @@ public class SimulationPane extends GridPane {
      * @param model the simulation model that contains the meat eater object
      */
     public void addMeatEater(float size, float rate, SimulationModel model) {
-        model.addMeatEater(size, rate);
+        model.addMeatEater(size, rate, plantEaters);
         Label testLabel = new Label("Meat eater added. Meat eater population is now: " + model.getMeatEaters().size() + " meat eaters");
         this.add(testLabel, 0, row);
         row++;
