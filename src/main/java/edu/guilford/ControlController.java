@@ -250,6 +250,15 @@ public class ControlController {
         simulationPane.chew(model);
     }
 
+    /**
+     * A method that makes a meat eater object eat a plant eater object
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void eat() {
+        simulationPane.eat(model);
+    }
+
     
 
 }

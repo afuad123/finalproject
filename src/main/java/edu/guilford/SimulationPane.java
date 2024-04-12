@@ -191,4 +191,17 @@ public class SimulationPane extends GridPane {
         this.add(testLabel, 0, row);
         row++;
     }  
+
+    /**
+     * A method that displays the meat eater object chasing and eating a plant eater object
+     * @param model the simulation model that contains the meat eater and plant eater objects
+     */
+    public void eat(SimulationModel model) {
+        PlantEater randPlantEater = model.getPlantEaters().get(rand.nextInt(model.getPlantEaters().size()));
+        model.getMeatEaters().get(model.getMeatEaters().size() - 1).eat();
+        Label testLabel = new Label("Meat eater chased and ate a plant eater");
+        model.getPlantEaters().remove(randPlantEater);
+        this.add(testLabel, 0, row);
+        row++;
+    }
 }
