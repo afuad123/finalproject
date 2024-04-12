@@ -44,6 +44,11 @@ public class PlantEater extends Critter {
         size += amount;
     }
 
+   
+    public void eaten() {
+        die();
+    }
+
     /**
      * A method that simulates a day in the life of the PlantEater; it first chews on a randomly determined number of plants; 
      * after chewing on all the plants, it calls the simulateDay method of the Critter class and then the simulateDay method of the Creature class

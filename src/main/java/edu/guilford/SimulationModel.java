@@ -24,6 +24,7 @@ public class SimulationModel {
      * A list of plant objects that are the first plants in the simulation
      */
     private List<Plant> plants = new ArrayList<Plant>();
+    private Plant[] plantArray = plants.toArray(new Plant[plants.size()]);
 
 
     /**
@@ -79,9 +80,9 @@ public class SimulationModel {
         for (PlantEater pe : plantEaters) {
             pe.simulateDay();
         }
-        // for (MeatEater me : meatEaters) {
-        //     me.simulateDay();
-        // }
+        for (MeatEater me : meatEaters) {
+            me.simulateDay();
+        }
         
     }
 
@@ -108,18 +109,18 @@ public class SimulationModel {
      * @param size the size of the new meat eater object (in g)
      * @param rate the rate of growth of the new meat eater object (in g/day)
      */
-    public void addMeatEater(float size, float rate, PlantEater[] plantEaters) {
-        meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantEaters));
+    public void addMeatEater(float size, float rate, PlantEater[] plantArray) {
+        meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantArray));
     }
 
     /**
      * A method that enables a plant eater to chew on a random plant object
      */
-    public void chew(PlantEater pe, Plant p) {
-        //PlantEater pe = plantEaters.get(rand.nextInt(plantEaters.size()));
-        //Plant p = plants.get(rand.nextInt(plants.size()));
-        pe.chew(p); 
-    }
+    // public void chew(PlantEater pe, Plant p) {
+    //     //PlantEater pe = plantEaters.get(rand.nextInt(plantEaters.size()));
+    //     //Plant p = plants.get(rand.nextInt(plants.size()));
+    //     pe.chew(p); 
+    // }
 
 
     /**
