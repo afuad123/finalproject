@@ -171,6 +171,15 @@ public class SimulationPane extends GridPane {
         this.add(testLabel, 0, row);
         row++;
     }
-       
 
+    /**
+     * A method that displays the plant eater object chewing on a plant object
+     */
+    public void plantEaterChew() {
+        //make the most recently added plant eater chew on a random plant
+        
+        Label testLabel = new Label("Plant eater chewed on a plant");
+        this.add(testLabel, 0, row);
+        row++;
+    }  
 }

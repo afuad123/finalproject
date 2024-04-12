@@ -112,6 +112,15 @@ public class SimulationModel {
         meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantEaters));
     }
 
+    /**
+     * A method that enables a plant eater to chew on a random plant object
+     */
+    public void chew(PlantEater pe, Plant p) {
+        //PlantEater pe = plantEaters.get(rand.nextInt(plantEaters.size()));
+        //Plant p = plants.get(rand.nextInt(plants.size()));
+        pe.chew(p); 
+    }
+
 
     /**
      * A method that returns the list of plant objects in the simulation
