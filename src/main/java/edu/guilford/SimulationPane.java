@@ -97,10 +97,12 @@ public class SimulationPane extends GridPane {
         int plantPop = model.getPlants().size();
         float plantGrowthRate = 0;
         float plantSize = 0;
-        for (Plant p : model.getPlants()) {
-            plantGrowthRate += p.getRate();
-            plantSize += p.getSize();
+
+        for (int i = 0; i < model.getPlants().size(); i++) {
+            plantGrowthRate += model.getPlants().get(i).getRate();
+            plantSize += model.getPlants().get(i).getSize();
         }
+
         plantGrowthRate /= plantPop;
         plantSize /= plantPop;
 
@@ -121,11 +123,13 @@ public class SimulationPane extends GridPane {
         float plantEaterGrowthRate = 0;
         float foodNeed = 0;
         float plantEaterSize = 0;
-        for (PlantEater p : model.getPlantEaters()) {
-            plantEaterGrowthRate += p.getRate();
-            foodNeed += p.getFoodNeed();
-            plantEaterSize += p.getSize();
+
+        for (int i = 0; i < model.getPlants().size(); i++) {
+            plantEaterGrowthRate += model.getPlantEaters().get(i).getRate();
+            plantEaterSize += model.getPlantEaters().get(i).getSize();
+            foodNeed += model.getPlantEaters().get(i).getFoodNeed();
         }
+
         plantEaterSize /= plantEaterPop;
         plantEaterGrowthRate /= plantEaterPop;
         foodNeed /= plantEaterPop;
@@ -148,11 +152,13 @@ public class SimulationPane extends GridPane {
         float meatEaterGrowthRate = 0;
         float foodNeed = 0;
         float meatEaterSize = 0;
-        for (MeatEater p : model.getMeatEaters()) {
-            meatEaterGrowthRate += p.getRate();
-            foodNeed += p.getFoodNeed();
-            meatEaterSize += p.getSize();
+
+        for (int i = 0; i < model.getMeatEaters().size(); i++) {
+            meatEaterGrowthRate += model.getMeatEaters().get(i).getRate();
+            foodNeed += model.getMeatEaters().get(i).getFoodNeed();
+            meatEaterSize += model.getMeatEaters().get(i).getSize();
         }
+
         meatEaterSize /= meatEaterPop;
         meatEaterGrowthRate /= meatEaterPop;
         foodNeed /= meatEaterPop;
