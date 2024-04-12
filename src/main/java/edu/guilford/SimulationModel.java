@@ -146,6 +146,30 @@ public class SimulationModel {
         return meatEaters; 
     }
 
+    /**
+     * A method that sets the list of plant objects in the simulation
+     * @param plants the list of plant objects in the simulation
+     */
+    public void setPlants(List<Plant> plants) {
+        this.plants = plants;
+    }
+    
+    /**
+     * A method that sets the list of plant eater objects in the simulation
+     * @param plantEaters the list of plant eater objects in the simulation
+     */
+    public void setPlantEaters(List<PlantEater> plantEaters) {
+        this.plantEaters = plantEaters;
+    }
+
+    /**
+     * A method that sets the list of meat eater objects in the simulation
+     * @param meatEaters the list of meat eater objects in the simulation
+     */
+    public void setMeatEaters(List<MeatEater> meatEaters) {
+        this.meatEaters = meatEaters;
+    }
+
     
 
    

@@ -121,7 +121,7 @@
       </SplitPane>
       <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearSimulation" text="Clear" GridPane.columnIndex="2" />
       <Button fx:id="eatButton" mnemonicParsing="false" text="Make MeatEater Eat" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button fx:id="chewButton" mnemonicParsing="false" text="Make PlantEater Chew" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="chewButton" mnemonicParsing="false" onAction="#chew" text="Make PlantEater Chew" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day For Simulation" GridPane.rowIndex="4" />
       <Button fx:id="plantStatsButton" mnemonicParsing="false" onAction="#viewPlantStats" text="View Plant Stats" GridPane.rowIndex="5" />
       <Button fx:id="plantEaterStatsButton" mnemonicParsing="false" onAction="#viewPlantEaterStats" text="View PlantEater Stats" GridPane.columnIndex="1" GridPane.rowIndex="5" />

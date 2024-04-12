@@ -1,5 +1,7 @@
 package edu.guilford;
 
+import java.util.Random;
+
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
@@ -12,6 +14,11 @@ import javafx.scene.layout.GridPane;
  */
 
 public class SimulationPane extends GridPane {
+
+    /**
+     * A random number generator
+     */
+    Random rand = new Random();
 
     /**
      * A reference to the simulation model that is displayed by this pane
@@ -174,11 +181,13 @@ public class SimulationPane extends GridPane {
 
     /**
      * A method that displays the plant eater object chewing on a plant object
+     * @param model the simulation model that contains the plant eater and plant objects
      */
-    public void plantEaterChew() {
-        //make the most recently added plant eater chew on a random plant
-        
+    public void chew(SimulationModel model) {
+        Plant randPlant = model.getPlants().get(rand.nextInt(model.getPlants().size()));
+        plantEaters[plantEaters.length - 1].chew(randPlant);
         Label testLabel = new Label("Plant eater chewed on a plant");
+        model.getPlants().remove(randPlant);
         this.add(testLabel, 0, row);
         row++;
     }  
