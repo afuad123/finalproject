@@ -14,17 +14,16 @@ import java.io.IOException;
 public class CreatureDriver extends Application {
 
     private static Scene scene;
-    private int sceneWidth = 600;
-    private int sceneHeight = 600;
 
     @Override
     public void start(Stage stage) throws IOException {
+        //main window
         SimulationModel model = new SimulationModel();
         SimulationPane root = new SimulationPane();
-        scene = new Scene(root, sceneWidth, sceneHeight);
+        scene = new Scene(root, 800, 600);
         stage.setTitle("Creature Simulation");
-        stage.setX(875);
-        stage.setY(150);
+        stage.setX(775);
+        stage.setY(100);
         stage.setScene(scene);
         stage.show();
 
@@ -32,20 +31,33 @@ public class CreatureDriver extends Application {
         //window for controls
         Stage controlStage = new Stage();
         //build an FXMLLoader object that will load the FXML file and interact with the controller class
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("control.fxml"));
-        Parent controlRoot = loader.load();
-        ControlController controlController = loader.getController();
-        // pass the shapepane object to the controlcontroller object
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("control.fxml"));
+        Parent controlRoot1 = loader1.load();
+        ControlController controlController = loader1.getController();
+        // pass the simulationpane object to the controlcontroller object
         controlController.setSimulationPane(root);
         controlController.setModel(model);
-        
-        Scene controlScene = new Scene(controlRoot, 600, 600);
+        Scene controlScene = new Scene(controlRoot1, 600, 600);
         controlStage.setTitle("Controls");
         //set x and y position of the control window
-        controlStage.setX(225);
-        controlStage.setY(150);
+        controlStage.setX(150);
+        controlStage.setY(100);
         controlStage.setScene(controlScene);
         controlStage.show();
+
+        //repeat but for the instruction pane
+        Stage instructionStage = new Stage();
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("instrux.fxml"));
+        Parent controlRoot2 = loader2.load();
+        // InstructionPane instructionPane = loader2.getController();
+        Scene instructionScene = new Scene(controlRoot2, 600, 250);
+        instructionStage.setX(500);
+        instructionStage.setY(1200);
+        instructionStage.setTitle("Instructions");
+        instructionStage.setScene(instructionScene);
+        instructionStage.show();
+        
+
     }
 
     static void setRoot(String fxml) throws IOException {
