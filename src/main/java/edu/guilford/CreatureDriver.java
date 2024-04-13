@@ -51,23 +51,23 @@ public class CreatureDriver extends Application {
         Parent controlRoot2 = loader2.load();
         // InstructionPane instructionPane = loader2.getController();
         Scene instructionScene = new Scene(controlRoot2, 600, 250);
-        instructionStage.setX(500);
+        instructionStage.setX(150);
         instructionStage.setY(1200);
         instructionStage.setTitle("Instructions");
         instructionStage.setScene(instructionScene);
         instructionStage.show();
 
-        Stage forFunStage = new Stage();
-        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("forfun.fxml"));
+        Stage ndStage = new Stage();
+        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("nondescript.fxml"));
         Parent controlRoot3 = loader3.load();
-        Scene forFunScene = new Scene(controlRoot3, 600, 600);
-        ForFunPane forFunPane = loader3.getController();
-        forFunPane.makeImageDisappear();
-        forFunStage.setX(500);
-        forFunStage.setY(100);
-        forFunStage.setTitle("For Fun");
-        forFunStage.setScene(forFunScene);
-        forFunStage.show();
+        Scene ndScene = new Scene(controlRoot3, 600, 250);
+        NonDescriptPane ndPane = loader3.getController();
+        ndPane.makeImageDisappear();
+        ndStage.setX(975);
+        ndStage.setY(1200);
+        ndStage.setTitle("Nothing To See Here");
+        ndStage.setScene(ndScene);
+        ndStage.show();
         
 
     }
