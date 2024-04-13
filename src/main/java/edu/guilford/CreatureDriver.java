@@ -56,6 +56,18 @@ public class CreatureDriver extends Application {
         instructionStage.setTitle("Instructions");
         instructionStage.setScene(instructionScene);
         instructionStage.show();
+
+        Stage forFunStage = new Stage();
+        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("forfun.fxml"));
+        Parent controlRoot3 = loader3.load();
+        Scene forFunScene = new Scene(controlRoot3, 600, 600);
+        ForFunPane forFunPane = loader3.getController();
+        forFunPane.makeImageDisappear();
+        forFunStage.setX(500);
+        forFunStage.setY(100);
+        forFunStage.setTitle("For Fun");
+        forFunStage.setScene(forFunScene);
+        forFunStage.show();
         
 
     }
