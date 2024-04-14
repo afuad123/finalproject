@@ -100,6 +100,10 @@ public class MeatEater extends Critter {
         this.plantEaters = plantEaters;
     }
 
+    public void setSize(float size) {
+        this.size = size;    
+    }
+
 
 
 

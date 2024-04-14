@@ -56,10 +56,10 @@ public class PlantEater extends Critter {
      */
     @Override
     public void simulateDay() {
-        int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
-        for (int i = 0; i < numPlants; i++) {
-            chew(plants[rand.nextInt(plants.length)]);
-        }
+        // int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
+        // for (int i = 0; i < numPlants; i++) {
+        //     chew(plants[rand.nextInt(plants.length)]);
+        // }
         super.simulateDay();
     }
 
@@ -78,6 +78,11 @@ public class PlantEater extends Critter {
      */
     public float getFoodEaten() {
         return foodEaten;
+    }
+
+
+    public void setSize(float size) {
+        this.size = size;
     }
 
 }

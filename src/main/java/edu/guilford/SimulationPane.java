@@ -42,6 +42,17 @@ public class SimulationPane extends GridPane {
         super();
     }
 
+    /**
+     * A method that clears the simulation (starts it over)
+     * @param model the simulation model that is displayed by this pane
+     */
+    public void clear(SimulationModel model) {
+        model.clear();
+        Label testLabel = new Label("Simulation has been cleared");
+        this.add(testLabel, 0, row);
+        row++;
+    }
+
    /**
     * A method that adds a plant object to the simulation
     * @param size the size of the plant object
@@ -185,8 +196,10 @@ public class SimulationPane extends GridPane {
      */
     public void chew(SimulationModel model) {
         Plant randPlant = model.getPlants().get(rand.nextInt(model.getPlants().size()));
-        plantEaters[plantEaters.length - 1].chew(randPlant);
+        PlantEater plantEaterThatEats = plantEaters[plantEaters.length - 1];
+        plantEaterThatEats.chew(randPlant);
         Label testLabel = new Label("Plant eater chewed on a plant");
+        plantEaterThatEats.setSize(plantEaterThatEats.getSize() + randPlant.getSize());
         model.getPlants().remove(randPlant);
         this.add(testLabel, 0, row);
         row++;
@@ -198,8 +211,10 @@ public class SimulationPane extends GridPane {
      */
     public void eat(SimulationModel model) {
         PlantEater randPlantEater = model.getPlantEaters().get(rand.nextInt(model.getPlantEaters().size()));
-        model.getMeatEaters().get(model.getMeatEaters().size() - 1).eat();
+        MeatEater meatEaterThatEats = model.getMeatEaters().get(model.getMeatEaters().size() - 1);
+        meatEaterThatEats.eat();
         Label testLabel = new Label("Meat eater chased and ate a plant eater");
+        meatEaterThatEats.setSize(meatEaterThatEats.getSize() + randPlantEater.getSize());
         model.getPlantEaters().remove(randPlantEater);
         this.add(testLabel, 0, row);
         row++;

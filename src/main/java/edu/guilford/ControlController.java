@@ -2,7 +2,6 @@ package edu.guilford;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -166,6 +165,7 @@ public class ControlController {
      */
     @FXML 
     public void clearSimulation() {
+        simulationPane.clear(model);
         simulationPane.getChildren().clear();
     }
 

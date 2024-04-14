@@ -24,7 +24,6 @@ public class SimulationModel {
      * A list of plant objects that are the first plants in the simulation
      */
     private List<Plant> plants = new ArrayList<Plant>();
-    private Plant[] plantArray = plants.toArray(new Plant[plants.size()]);
 
 
     /**
@@ -169,6 +168,12 @@ public class SimulationModel {
      */
     public void setMeatEaters(List<MeatEater> meatEaters) {
         this.meatEaters = meatEaters;
+    }
+
+    public void clear() {
+        plants.clear();
+        plantEaters.clear();
+        meatEaters.clear();
     }
 
     
