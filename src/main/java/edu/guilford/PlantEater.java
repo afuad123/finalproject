@@ -38,7 +38,7 @@ public class PlantEater extends Critter {
      * @param plant the Plant object to be chewed on
      */
     public void chew(Plant plant) {
-        float amount = (rand.nextFloat() * plant.getSize()) / 2;
+        float amount = plant.getSize();
         plant.chewedOn(amount);
         eat(amount);
         size += amount;
@@ -56,10 +56,10 @@ public class PlantEater extends Critter {
      */
     @Override
     public void simulateDay() {
-        // int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
-        // for (int i = 0; i < numPlants; i++) {
-        //     chew(plants[rand.nextInt(plants.length)]);
-        // }
+        int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
+        for (int i = 0; i < numPlants; i++) {
+            chew(plants[rand.nextInt(plants.length)]);
+        }
         super.simulateDay();
     }
 

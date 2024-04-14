@@ -57,17 +57,17 @@ public class CreatureDriver extends Application {
         instructionStage.setScene(instructionScene);
         instructionStage.show();
 
-        Stage ndStage = new Stage();
-        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("nondescript.fxml"));
-        Parent controlRoot3 = loader3.load();
-        Scene ndScene = new Scene(controlRoot3, 600, 250);
-        NonDescriptPane ndPane = loader3.getController();
-        ndPane.makeImageDisappear();
-        ndStage.setX(975);
-        ndStage.setY(1200);
-        ndStage.setTitle("Nothing To See Here");
-        ndStage.setScene(ndScene);
-        ndStage.show();
+        // Stage ndStage = new Stage();
+        // FXMLLoader loader3 = new FXMLLoader(getClass().getResource("nondescript.fxml"));
+        // Parent controlRoot3 = loader3.load();
+        // Scene ndScene = new Scene(controlRoot3, 600, 250);
+        // NonDescriptPane ndPane = loader3.getController();
+        // ndPane.makeImageDisappear();
+        // ndStage.setX(975);
+        // ndStage.setY(1200);
+        // ndStage.setTitle("Nothing To See Here");
+        // ndStage.setScene(ndScene);
+        // ndStage.show();
         
 
     }

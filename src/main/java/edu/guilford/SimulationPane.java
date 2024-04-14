@@ -142,7 +142,7 @@ public class SimulationPane extends GridPane {
         float foodNeed = 0;
         float plantEaterSize = 0;
 
-        for (int i = 0; i < model.getPlants().size(); i++) {
+        for (int i = 0; i < model.getPlantEaters().size(); i++) {
             plantEaterGrowthRate += model.getPlantEaters().get(i).getRate();
             plantEaterSize += model.getPlantEaters().get(i).getSize();
             foodNeed += model.getPlantEaters().get(i).getFoodNeed();
@@ -199,7 +199,7 @@ public class SimulationPane extends GridPane {
         PlantEater plantEaterThatEats = plantEaters[plantEaters.length - 1];
         plantEaterThatEats.chew(randPlant);
         Label testLabel = new Label("Plant eater chewed on a plant");
-        plantEaterThatEats.setSize(plantEaterThatEats.getSize() + randPlant.getSize());
+        //plantEaterThatEats.setSize(plantEaterThatEats.getSize() + randPlant.getSize());
         model.getPlants().remove(randPlant);
         this.add(testLabel, 0, row);
         row++;
