@@ -45,9 +45,9 @@ public class PlantEater extends Critter {
     }
 
    
-    public void eaten() {
-        die();
-    }
+    // public void eaten() {
+    //     die();
+    // }
 
     /**
      * A method that simulates a day in the life of the PlantEater; it first chews on a randomly determined number of plants; 
@@ -80,7 +80,10 @@ public class PlantEater extends Critter {
         return foodEaten;
     }
 
-
+    /**
+     *A method that sets the size of the PlantEater object
+     * @param size the new size of the PlantEater object (in g)
+     */
     public void setSize(float size) {
         this.size = size;
     }

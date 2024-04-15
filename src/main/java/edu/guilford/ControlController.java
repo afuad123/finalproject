@@ -140,25 +140,6 @@ public class ControlController {
         this.model = model;
     }
 
-    // /**
-    //  * A method that initializes the control window
-    //  */
-    // @FXML
-    // public void initialize() {
-    //     plantButton.setOnAction(e -> {
-    //         simulationPane.addPlant(Integer.parseInt(plantSize.getText()), Integer.parseInt(plantRate.getText()));
-    //     });
-
-    //     plantEaterButton.setOnAction(e -> {
-    //         simulationPane.addPlantEater(Integer.parseInt(plantEaterSize.getText()), Integer.parseInt(plantEaterRate.getText()));
-    //     });
-
-    //     meatEaterButton.setOnAction(e -> {
-    //         simulationPane.addMeatEater(Integer.parseInt(meatEaterSize.getText()), Integer.parseInt(meatEaterRate.getText()));
-    //     });
-    // }
-
-
     /**
      * A method that clears the simulation pane
      * @param e the event that triggers the method (a button click)

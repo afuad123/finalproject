@@ -10,6 +10,7 @@ import java.util.Random;
  * @Version 4/7/24
  * @See SimulationPane
  * @See ControlController
+ * @See InstructionPane
  */
 
 public class SimulationModel {
@@ -37,30 +38,6 @@ public class SimulationModel {
      */
     private List<MeatEater> meatEaters = new ArrayList<MeatEater>();
 
-
-    /** 
-     * A constructor that sets up the simulation model.
-     * @param numPlants the number of plant objects in the simulation
-     * @param numMeatEaters the number of meat eater objects in the simulation
-     * @param numPlantEaters the number of plant eater objects in the simulation
-     * @param plantSize the initial size of the plant objects (in g)
-     * @param plantRate the initial rate of growth of the plant objects (in g/day)
-     * @param meatEaterSize the initial size of the meat eater objects (in g)
-     * @param meatEaterRate the initial rate of growth of the meat eater objects (in g/day)
-     * @param plantEaterSize the initial size of the plant eater objects (in g)
-     * @param plantEaterRate the initial rate of growth of the plant eater objects (in g/day)
-     * */ 
-    // public SimulationModel(int numPlants, int numMeatEaters, int numPlantEaters, float plantSize, float plantRate, float meatEaterSize, float meatEaterRate, float plantEaterSize, float plantEaterRate) {
-    //     for (int i = 0; i < numPlants; i++) {
-    //         plants.add(new Plant(plantSize, plantRate));
-    //     }
-    //     for (int i = 0; i < numMeatEaters; i++) {
-    //         meatEaters.add(new MeatEater(meatEaterSize, meatEaterRate, (15*meatEaterSize)/100));
-    //     }
-    //     for (int i = 0; i < numPlantEaters; i++) {
-    //         plantEaters.add(new PlantEater(plantEaterSize, plantEaterRate, (15*plantEaterSize)/100, plants.toArray(new Plant[plants.size()])));
-    //     }
-    // }
     
     /**
      * A constructor that sets up the simulation model.
@@ -112,15 +89,6 @@ public class SimulationModel {
         meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantArray));
     }
 
-    /**
-     * A method that enables a plant eater to chew on a random plant object
-     */
-    // public void chew(PlantEater pe, Plant p) {
-    //     //PlantEater pe = plantEaters.get(rand.nextInt(plantEaters.size()));
-    //     //Plant p = plants.get(rand.nextInt(plants.size()));
-    //     pe.chew(p); 
-    // }
-
 
     /**
      * A method that returns the list of plant objects in the simulation
@@ -170,6 +138,9 @@ public class SimulationModel {
         this.meatEaters = meatEaters;
     }
 
+    /**
+     * A method that clears the simulation of all objects
+     */
     public void clear() {
         plants.clear();
         plantEaters.clear();

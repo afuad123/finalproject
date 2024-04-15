@@ -57,17 +57,17 @@ public class CreatureDriver extends Application {
         instructionStage.setScene(instructionScene);
         instructionStage.show();
 
-        //repeat but for the output pane
-        Stage outputStage = new Stage();
-        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("output.fxml"));
-        Parent controlRoot3 = loader3.load();
-        OutputPane outputPane = loader3.getController();
-        Scene outputScene = new Scene(controlRoot3, 600, 250);
-        outputStage.setX(1200);
-        outputStage.setY(975);
-        outputStage.setTitle("Output");
-        outputStage.setScene(outputScene);
-        outputStage.show();
+        // //repeat but for the output pane
+        // Stage outputStage = new Stage();
+        // FXMLLoader loader3 = new FXMLLoader(getClass().getResource("output.fxml"));
+        // Parent controlRoot3 = loader3.load();
+        // OutputPane outputPane = loader3.getController();
+        // Scene outputScene = new Scene(controlRoot3, 600, 250);
+        // outputStage.setX(1200);
+        // outputStage.setY(975);
+        // outputStage.setTitle("Output");
+        // outputStage.setScene(outputScene);
+        // outputStage.show();
         
 
     }

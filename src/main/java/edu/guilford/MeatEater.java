@@ -30,66 +30,33 @@ public class MeatEater extends Critter {
         
     }
 
-    /* 
-    
-    @Override
-    public void simulateDay() {
-        int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
-        for (int i = 0; i < numPlants; i++) {
-            chew(plants[rand.nextInt(plants.length)]);
-        }
-        super.simulateDay();
-    }*/
-
     //METHODS
     /**
-     * A method that simulates a day in the life of the meat eater; along with adding onto the simulateDay method in the Critter class,
-     * the meat eater object can chase and eat one or two plant eater objects a day, causing the plant eater to die.
+     * A method that simulates a day in the life of the meat eater object; it first calls the eat method, 
+     * then the simulateDay method of the Critter class, and finally the simulateDay method of the Creature class
      */
     @Override
     public void simulateDay() {
-        //a meat eater object can chase one or two plant eater objects a day
-        int numChases = (rand.nextInt() * 2 + 1);
-        for (int i = 0; i < numChases; i++) {
-            //it has a specified probability of catching the plant eater object
-            if (rand.nextFloat() < 0.5) {
-                //if it does so, the meat eater will use its eat method with the current mass of the plant eater object
-                int plantToBeEaten = rand.nextInt(plantEaters.length);
-                eat(plantEaters[plantToBeEaten].getSize());
-                //the plant eater object will then invoke its die method
-                plantEaters[plantToBeEaten].die();
-            }
-            
-        }
-       // eat();
+        eat();
         super.simulateDay();
     }
 
-    /*public void chew(Plant plant) {
-        float amount = (rand.nextFloat() * plant.getSize()) / 2;
-        plant.chewedOn(amount);
-        eat(amount);
-        size += amount;
-    } */
+    /**
+     * A method that simulates the meat eater object eating; it chases a random number of plant eater objects and eats them
+     */
     public void eat() {
         //  //a meat eater object can chase one or two plant eater objects a day
-        //  int numChases = (rand.nextInt() * 2 + 1);
-        //  for (int i = 0; i < numChases; i++) {
-        //      //it has a specified probability of catching the plant eater object
-        //      if (rand.nextFloat() < 0.5) {
-        //          //if it does so, the meat eater will use its eat method with the current mass of the plant eater object
-        //          int plantToBeEaten = rand.nextInt(plantEaters.length);
-        //          eat(plantEaters[plantToBeEaten].getSize());
-        //          //the plant eater object will then invoke its die method
-        //          plantEaters[plantToBeEaten].die();
-        //      }
-        //  } 
-        int numChases = (rand.nextInt() * 2 + 1);
-        for (int i = 0; i < numChases; i++) {
-            if (rand.nextFloat() < 0.5) {
-
-            }
-        }
+         int numChases = (rand.nextInt() * 2 + 1);
+         for (int i = 0; i < numChases; i++) {
+             //it has a specified probability of catching the plant eater object
+             if (rand.nextFloat() < 0.5) {
+                 //if it does so, the meat eater will use its eat method with the current mass of the plant eater object
+                 int plantToBeEaten = rand.nextInt(plantEaters.length);
+                 eat(plantEaters[plantToBeEaten].getSize());
+                 //the plant eater object will then invoke its die method
+                 plantEaters[plantToBeEaten].die();
+             }
+         } 
     }
 
     /**
@@ -100,6 +67,10 @@ public class MeatEater extends Critter {
         this.plantEaters = plantEaters;
     }
 
+    /**
+     * A setter that sets the size of the meat eater object
+     * @param size the new size of the meat eater object (in g)
+     */
     public void setSize(float size) {
         this.size = size;    
     }
