@@ -31,9 +31,19 @@ public class SimulationPane extends GridPane {
     private int row = 0;
 
     /**
-     * An array of PlantEater objects that the meat eater object can chase and eat
+     * An array of PlantEater objects that the meat eater and human object can chase and eat
      */
     private PlantEater[] plantEaters;
+
+    /**
+     * An array of Plants that the human can harvest
+     */
+    private Plant[] plants;
+
+    /**
+     * An array of MeatEater object that the human can chase and eat
+     */
+    private MeatEater[] meatEaters;
 
     /**
      * A constructor that sets up the simulation pane
@@ -94,6 +104,19 @@ public class SimulationPane extends GridPane {
         this.add(testLabel, 0, row);
         row++;
         
+    }
+
+    /**
+     * A method that adds a human object to the simulation
+     * @param size the size of the human object
+     * @param rate the rate of growth of the human object
+     * @param model the simulation model that contains the human object
+     */
+    public void addHuman(float size, float rate, SimulationModel model) {
+        model.addHuman(size, rate);
+        Label testLabel = new Label("Human added. Human population is now: " + model.getHumans().size() + " humans");
+        this.add(testLabel, 0, row);
+        row++;
     }
 
     /**
@@ -191,6 +214,35 @@ public class SimulationPane extends GridPane {
     }
 
     /**
+     * A method that displays the total human population size, average size, average growth rate, and average food need
+     * @param model the simulation model that contains the human objects
+     */
+    public void humanStats(SimulationModel model) {
+        int humanPop = model.getHumans().size();
+        float humanGrowthRate = 0;
+        float foodNeed = 0;
+        float humanSize = 0;
+
+        for (int i = 0; i < model.getHumans().size(); i++) {
+            humanGrowthRate += model.getHumans().get(i).getRate();
+            foodNeed += model.getHumans().get(i).getFoodNeed();
+            humanSize += model.getHumans().get(i).getSize();
+        }
+
+        humanSize /= humanPop;
+        humanGrowthRate /= humanPop;
+        foodNeed /= humanPop;
+
+        humanSize = Math.round(humanSize * 100.0f) / 100.0f;
+        humanGrowthRate = Math.round(humanGrowthRate * 100.0f) / 100.0f;
+        foodNeed = Math.round(foodNeed * 100.0f) / 100.0f;
+
+        Label testLabel = new Label("Total human population size: " + humanPop + " humans. Average human size: " + humanSize + "g. Average growth rate: " + humanGrowthRate + " g/day" + " Average food need: " + foodNeed + " g/day");
+        this.add(testLabel, 0, row);
+        row++;
+    }
+
+    /**
      * A method that displays the plant eater object chewing on a plant object
      * @param model the simulation model that contains the plant eater and plant objects
      */
@@ -218,5 +270,36 @@ public class SimulationPane extends GridPane {
         model.getPlantEaters().remove(randPlantEater);
         this.add(testLabel, 0, row);
         row++;
+    }
+
+    /** 
+     * A method that displays the human object eating a plant, planteater, or meat eater (randomly determined)
+     * @param model the simulation model that contains the human, plant, plant eater, and meat eater objects
+     */
+    public void hunt(SimulationModel model) {
+        Human humanThatEats = model.getHumans().get(model.getHumans().size() - 1);
+        int randNum = rand.nextInt(3);
+        if (randNum == 0) {
+            Plant randPlant = model.getPlants().get(rand.nextInt(model.getPlants().size()));
+            humanThatEats.eat(randPlant.getSize());
+            model.getPlants().remove(randPlant);
+            Label testLabel = new Label("Human ate a plant");
+            this.add(testLabel, 0, row);
+            row++;
+        } else if (randNum == 1) {
+            PlantEater randPlantEater = model.getPlantEaters().get(rand.nextInt(model.getPlantEaters().size()));
+            humanThatEats.eat(randPlantEater.getSize());
+            model.getPlantEaters().remove(randPlantEater);
+            Label testLabel = new Label("Human ate a plant eater");
+            this.add(testLabel, 0, row);
+            row++;
+        } else {
+            MeatEater randMeatEater = model.getMeatEaters().get(rand.nextInt(model.getMeatEaters().size()));
+            humanThatEats.eat(randMeatEater.getSize());
+            model.getMeatEaters().remove(randMeatEater);
+            Label testLabel = new Label("Human ate a meat eater");
+            this.add(testLabel, 0, row);
+            row++;
+        }
     }
 }

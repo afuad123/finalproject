@@ -16,6 +16,7 @@
     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -39,12 +40,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="52.0" layoutY="27.0" text="Specify plant rate" />
+                  <Label layoutX="27.0" layoutY="19.0" text="Specify plant rate" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="plantRate" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantRate" layoutX="33.0" layoutY="14.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -53,12 +54,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="35.0" layoutY="27.0" text="Specify plant eater  rate" />
+                  <Label layoutX="10.0" layoutY="19.0" text="Specify plant eater  rate" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="plantEaterRate" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantEaterRate" layoutX="33.0" layoutY="14.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -67,12 +68,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="36.0" layoutY="27.0" text="Specify meat eater rate" />
+                  <Label layoutX="14.0" layoutY="19.0" text="Specify meat eater rate" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="meatEaterRate" layoutX="58.0" layoutY="22.0" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="meatEaterRate" layoutX="33.0" layoutY="14.0" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -81,12 +82,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="52.0" layoutY="27.0" text="Specify plant size" />
+                  <Label layoutX="27.0" layoutY="18.0" text="Specify plant size" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="plantSize" layoutX="59.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantSize" layoutX="33.0" layoutY="13.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -95,12 +96,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="36.0" layoutY="27.0" text="Specify plant eater size" />
+                  <Label layoutX="11.0" layoutY="18.0" text="Specify plant eater size" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="plantEaterSize" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="plantEaterSize" layoutX="33.0" layoutY="13.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -109,12 +110,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="36.0" layoutY="27.0" text="Specify meat eater size" />
+                  <Label layoutX="11.0" layoutY="18.0" text="Specify meat eater size" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="meatEaterSize" layoutX="58.0" layoutY="22.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+                  <TextField fx:id="meatEaterSize" layoutX="33.0" layoutY="13.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
                </children>
             </AnchorPane>
         </items>
@@ -122,9 +123,41 @@
       <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearSimulation" text="Clear" GridPane.columnIndex="2" />
       <Button fx:id="eatButton" mnemonicParsing="false" onAction="#eat" text="Make MeatEater Eat" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Button fx:id="chewButton" mnemonicParsing="false" onAction="#chew" text="Make PlantEater Chew" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day For Simulation" GridPane.rowIndex="4" />
+      <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day" GridPane.rowIndex="4" />
       <Button fx:id="plantStatsButton" mnemonicParsing="false" onAction="#viewPlantStats" text="View Plant Stats" GridPane.rowIndex="5" />
       <Button fx:id="plantEaterStatsButton" mnemonicParsing="false" onAction="#viewPlantEaterStats" text="View PlantEater Stats" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <Button fx:id="meatEaterStatsButton" mnemonicParsing="false" onAction="#viewMeatEaterStats" text="View MeatEater Stats" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button fx:id="humanButton" mnemonicParsing="false" onAction="#submitHuman" text="Add Human" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button fx:id="huntButton" mnemonicParsing="false" onAction="#hunt" text="Make Human Hunt" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button fx:id="humanStatsButton" mnemonicParsing="false" onAction="#viewHumanStats" text="View Human Stats" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="19.0" text="Specify human rate" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="humanRate" layoutX="33.0" layoutY="14.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="18.0" text="Specify human size" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="humanSize" layoutX="33.0" layoutY="13.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="83.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label text="Created by: A. Fuad" GridPane.columnIndex="3" />
    </children>
 </GridPane>

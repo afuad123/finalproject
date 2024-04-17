@@ -49,6 +49,12 @@ public class ControlController {
      */
     private Button meatEaterButton;
 
+    @FXML
+    /**
+     * A button that adds a new human the simulation
+     */
+    private Button humanButton;
+
     /**
      * A button that makes a plant eater object chew a plant object
      */
@@ -60,6 +66,12 @@ public class ControlController {
      */
     @FXML
     private Button eatButton;
+
+    /**
+     * A button that makes a human object hunt
+     */
+    @FXML
+    private Button huntButton;
 
     /**
      * A button that allows the user to simulate a day in the simulation
@@ -84,6 +96,12 @@ public class ControlController {
      */
     @FXML
     private Button meatEaterStatsButton;
+
+    /**
+     * A button that allows the user to view human stats after simulating a day
+     */
+    @FXML
+    private Button humanStatsButton;
 
     /**
      * A textfield that contains the size of the plant object
@@ -122,7 +140,17 @@ public class ControlController {
     @FXML
     private TextField meatEaterRate;
 
-  
+    /**
+     * A textfield that contains the size of the human object
+     */
+    @FXML
+    private TextField humanSize;
+
+    /**
+     * A textfield that contains the rate of growth of the human object
+    */
+    @FXML
+    private TextField humanRate;
   
     /**
      * A setter for SimulationPane
@@ -159,7 +187,6 @@ public class ControlController {
         float size = Float.parseFloat(plantSize.getText());
         float rate = Float.parseFloat(plantRate.getText());
         simulationPane.addPlant(size, rate, model);
-        //testLabel.setText("Plant added");
     }
 
     /**
@@ -171,7 +198,6 @@ public class ControlController {
         float size = Float.parseFloat(plantEaterSize.getText());
         float rate = Float.parseFloat(plantEaterRate.getText());
         simulationPane.addPlantEater(size, rate, model);
-        //testLabel.setText("Plant eater added");
     }
 
     /**
@@ -183,7 +209,17 @@ public class ControlController {
         float size = Float.parseFloat(meatEaterSize.getText());
         float rate = Float.parseFloat(meatEaterRate.getText());
         simulationPane.addMeatEater(size, rate, model);
-        //testLabel.setText("Meat eater added");
+    }
+
+    /**
+     * A method that adds a new human object to the simulation
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void submitHuman() {
+        float size = Float.parseFloat(humanSize.getText());
+        float rate = Float.parseFloat(humanRate.getText());
+        simulationPane.addHuman(size, rate, model);
     }
 
     /**
@@ -223,6 +259,15 @@ public class ControlController {
     }
 
     /**
+     * A method that allows the user to view the stats of the human objects after simulating a day
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void viewHumanStats() {
+        simulationPane.humanStats(model);
+    }
+
+    /**
      * A method that makes a plant eater object chew a plant object
      * @param e the event that triggers the method (a button click)
      */
@@ -238,6 +283,15 @@ public class ControlController {
     @FXML
     public void eat() {
         simulationPane.eat(model);
+    }
+
+    /**
+     * A method that makes a human object hunt
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void hunt() {
+        simulationPane.hunt(model);
     }
 
     

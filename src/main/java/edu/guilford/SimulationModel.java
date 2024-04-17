@@ -38,6 +38,11 @@ public class SimulationModel {
      */
     private List<MeatEater> meatEaters = new ArrayList<MeatEater>();
 
+    /**
+     * A list of human objects that are in the simulation
+     */
+    private List<Human> humans = new ArrayList<Human>();
+
     
     /**
      * A constructor that sets up the simulation model.
@@ -47,7 +52,7 @@ public class SimulationModel {
     }
 
     /**
-     * A method that simulates a day in the simulation; it first simulates a day for each plant object, then for each plant eater object, and finally for each meat eater object
+     * A method that simulates a day in the simulation for each type of object
      */
     public void simulateDay() {
         for (Plant p : plants) {
@@ -58,6 +63,9 @@ public class SimulationModel {
         }
         for (MeatEater me : meatEaters) {
             me.simulateDay();
+        }
+        for (Human h : humans) {
+            h.simulateDay();
         }
         
     }
@@ -89,6 +97,15 @@ public class SimulationModel {
         meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantArray));
     }
 
+    /**
+     * A method that adds a new human object to the simulation
+     * @param size the size of the new human object (in g)
+     * @param rate the rate of growth of the new human object (in g/day)
+     */
+    public void addHuman(float size, float rate) {
+        humans.add(new Human(size, rate, (15*size)/100, plants.toArray(new Plant[plants.size()]), plantEaters.toArray(new PlantEater[plantEaters.size()]), meatEaters.toArray(new MeatEater[meatEaters.size()])));
+    }
+
 
     /**
      * A method that returns the list of plant objects in the simulation
@@ -112,6 +129,14 @@ public class SimulationModel {
      */
     public List<MeatEater> getMeatEaters() {
         return meatEaters; 
+    }
+
+    /**
+     * A method that returns the list of human objects in the simulation
+     * @return the list of human objects in the simulation
+     */
+    public List<Human> getHumans() {
+        return humans;
     }
 
     /**
@@ -139,12 +164,21 @@ public class SimulationModel {
     }
 
     /**
+     * A method that sets the list of human objects in the simulation
+     * @param humans the list of human objects in the simulation
+     */
+    public void setHumans(List<Human> humans) {
+        this.humans = humans;
+    }
+
+    /**
      * A method that clears the simulation of all objects
      */
     public void clear() {
         plants.clear();
         plantEaters.clear();
         meatEaters.clear();
+        humans.clear();
     }
 
     

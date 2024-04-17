@@ -35,8 +35,7 @@ public class Human extends Critter {
     @Override
     public void simulateDay() {
         eat();
-        drink();
-       //commute();
+       commute(null);
         super.simulateDay();
     }
 
@@ -68,13 +67,6 @@ public class Human extends Critter {
             plants[plantToBeHarvested].die();
         }
         polluteAir(size);
-    }
-
-    /**
-     * A method that simulates the Human object drinking
-     */
-    public void drink() {
-        polluteWater(size);
     }
 
     /**
