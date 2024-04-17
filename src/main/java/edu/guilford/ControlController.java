@@ -33,6 +33,12 @@ public class ControlController {
 
     @FXML
     /**
+     * A button that restarts the Simulation
+     */
+    private Button restartButton;
+
+    @FXML
+    /**
      * A button that adds a new plant to the simulation
      */
     private Button plantButton;
@@ -169,12 +175,20 @@ public class ControlController {
     }
 
     /**
-     * A method that clears the simulation pane
+     * A method that clears the pane of text
+     * @param e the event that triggers the method (a button click)
+     */
+    @FXML
+    public void clearPane() {
+        simulationPane.getChildren().clear();
+    }
+    /**
+     * A method that restarts the simulation 
      * @param e the event that triggers the method (a button click)
      */
     @FXML 
-    public void clearSimulation() {
-        simulationPane.clear(model);
+    public void restartSimulation() {
+        simulationPane.restart(model);
         simulationPane.getChildren().clear();
     }
 

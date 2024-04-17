@@ -56,9 +56,9 @@ public class SimulationPane extends GridPane {
      * A method that clears the simulation (starts it over)
      * @param model the simulation model that is displayed by this pane
      */
-    public void clear(SimulationModel model) {
-        model.clear();
-        Label testLabel = new Label("Simulation has been cleared");
+    public void restart(SimulationModel model) {
+        model.restart();
+        Label testLabel = new Label("Simulation has been restarted");
         this.add(testLabel, 0, row);
         row++;
     }

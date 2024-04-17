@@ -35,7 +35,7 @@ public class Human extends Critter {
     @Override
     public void simulateDay() {
         eat();
-       commute(null);
+       //commute(null);
         super.simulateDay();
     }
 

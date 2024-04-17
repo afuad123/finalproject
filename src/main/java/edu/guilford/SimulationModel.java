@@ -174,7 +174,7 @@ public class SimulationModel {
     /**
      * A method that clears the simulation of all objects
      */
-    public void clear() {
+    public void restart() {
         plants.clear();
         plantEaters.clear();
         meatEaters.clear();

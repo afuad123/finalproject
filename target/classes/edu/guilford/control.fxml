@@ -120,7 +120,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearSimulation" text="Clear" GridPane.columnIndex="2" />
+      <Button fx:id="restartButton" mnemonicParsing="false" onAction="#restartSimulation" text="Restart" GridPane.columnIndex="2" />
       <Button fx:id="eatButton" mnemonicParsing="false" onAction="#eat" text="Make MeatEater Eat" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Button fx:id="chewButton" mnemonicParsing="false" onAction="#chew" text="Make PlantEater Chew" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Button fx:id="simulateDayButton" mnemonicParsing="false" onAction="#simulateDay" text="Simulate Day" GridPane.rowIndex="4" />
@@ -158,6 +158,6 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Label text="Created by: A. Fuad" GridPane.columnIndex="3" />
+      <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearPane" text="Clear screen" GridPane.columnIndex="3" />
    </children>
 </GridPane>
