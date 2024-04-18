@@ -46,7 +46,8 @@ public class MeatEater extends Critter {
      */
     public void eat() {
         //a meat eater object can chase one or two plant eater objects a day
-         int numChases = (rand.nextInt() * 2 + 1);
+        //  int numChases = (rand.nextInt() * 2 + 1);
+        int numChases = (rand.nextInt(2) + 1);
          for (int i = 0; i < numChases; i++) {
              //it has a specified probability of catching the plant eater object
              if (rand.nextFloat() < 0.5) {

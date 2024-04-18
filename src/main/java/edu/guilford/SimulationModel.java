@@ -92,6 +92,7 @@ public class SimulationModel {
      * A method that adds a new meat eater object to the simulation
      * @param size the size of the new meat eater object (in g)
      * @param rate the rate of growth of the new meat eater object (in g/day)
+     * @param plantArray the array of plant eater objects that the new meat eater object can chase and eat
      */
     public void addMeatEater(float size, float rate, PlantEater[] plantArray) {
         meatEaters.add(new MeatEater(size, rate, (15*size)/100, plantArray));
@@ -101,9 +102,12 @@ public class SimulationModel {
      * A method that adds a new human object to the simulation
      * @param size the size of the new human object (in g)
      * @param rate the rate of growth of the new human object (in g/day)
+     * @param plants the array of plant objects that the new human object can eat
+     * @param plantEaters the array of plant eater objects that the new human object can chase and eat
+     * @param meatEaters the array of meat eater objects that the new human object can chase and eat
      */
-    public void addHuman(float size, float rate) {
-        humans.add(new Human(size, rate, (15*size)/100, plants.toArray(new Plant[plants.size()]), plantEaters.toArray(new PlantEater[plantEaters.size()]), meatEaters.toArray(new MeatEater[meatEaters.size()])));
+    public void addHuman(float size, float rate, Plant[] plants, PlantEater[] plantEaters, MeatEater[] meatEaters) {
+        humans.add(new Human(size, rate, (15*size)/100, getPlants().toArray(new Plant[getPlants().size()]), getPlantEaters().toArray(new PlantEater[getPlantEaters().size()]), getMeatEaters().toArray(new MeatEater[getMeatEaters().size()])));
     }
 
 

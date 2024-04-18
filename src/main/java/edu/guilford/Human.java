@@ -52,8 +52,10 @@ public class Human extends Critter {
      * A human can also harvest 5 plants a day
      */
     public void eat() {
-        int numPlants = (rand.nextInt() * 3 + 1);
-        int numMeat = (rand.nextInt() * 2 + 1);
+        // int numPlants = (rand.nextInt() * 3 + 1);
+        // int numMeat = (rand.nextInt() * 2 + 1);
+        int numPlants = (rand.nextInt(3) + 1);
+        int numMeat = (rand.nextInt(2) + 1);
         for (int i = 0; i < numPlants; i++) {
             if (rand.nextFloat() < 0.5) {
             int plantToBeEaten = rand.nextInt(plants.length);

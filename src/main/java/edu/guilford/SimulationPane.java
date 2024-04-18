@@ -30,20 +30,26 @@ public class SimulationPane extends GridPane {
      */
     private int row = 0;
 
+      /**
+     * An array of Plants that the human can harvest
+     */
+     private Plant[] plants;
+
+
     /**
      * An array of PlantEater objects that the meat eater and human object can chase and eat
      */
     private PlantEater[] plantEaters;
 
     /**
-     * An array of Plants that the human can harvest
-     */
-    private Plant[] plants;
-
-    /**
      * An array of MeatEater object that the human can chase and eat
      */
     private MeatEater[] meatEaters;
+
+    /**
+     * An array of Human objects
+     */
+    private Human[] humans;
 
     /**
      * A constructor that sets up the simulation pane
@@ -71,6 +77,7 @@ public class SimulationPane extends GridPane {
     */
     public void addPlant(float size, float rate, SimulationModel model) {
         model.addPlant(size, rate);
+        plants = model.getPlants().toArray(new Plant[model.getPlants().size()]);
         Label testLabel = new Label("Plant added. Plant population is now: " + model.getPlants().size() + " plants");
         this.add(testLabel, 0, row);
         row++;
@@ -99,7 +106,8 @@ public class SimulationPane extends GridPane {
      * @param model the simulation model that contains the meat eater object
      */
     public void addMeatEater(float size, float rate, SimulationModel model) {
-        model.addMeatEater(size, rate, plantEaters);
+        model.addMeatEater(size, rate, model.getPlantEaters().toArray(new PlantEater[model.getPlantEaters().size()]));
+        meatEaters = model.getMeatEaters().toArray(new MeatEater[model.getMeatEaters().size()]);
         Label testLabel = new Label("Meat eater added. Meat eater population is now: " + model.getMeatEaters().size() + " meat eaters");
         this.add(testLabel, 0, row);
         row++;
@@ -113,7 +121,8 @@ public class SimulationPane extends GridPane {
      * @param model the simulation model that contains the human object
      */
     public void addHuman(float size, float rate, SimulationModel model) {
-        model.addHuman(size, rate);
+        model.addHuman(size, rate, model.getPlants().toArray(new Plant[model.getPlants().size()]),  model.getPlantEaters().toArray(new PlantEater[model.getPlantEaters().size()]), model.getMeatEaters().toArray(new MeatEater[model.getMeatEaters().size()]));
+        humans = model.getHumans().toArray(new Human[model.getHumans().size()]);
         Label testLabel = new Label("Human added. Human population is now: " + model.getHumans().size() + " humans");
         this.add(testLabel, 0, row);
         row++;

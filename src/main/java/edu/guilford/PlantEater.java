@@ -56,7 +56,9 @@ public class PlantEater extends Critter {
      */
     @Override
     public void simulateDay() {
-        int numPlants = (int) (plants.length * (rand.nextFloat() * 0.02 + 0.005));
+        int numPlants = (rand.nextInt(5) + 1);
+        //int numPlants = (int) (plants.length * (rand.nextFloat(2/100)));
+        //float numPlants = (plants.length * (rand.nextFloat(2/100)));
         for (int i = 0; i < numPlants; i++) {
             chew(plants[rand.nextInt(plants.length)]);
         }
