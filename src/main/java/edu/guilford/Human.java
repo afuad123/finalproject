@@ -35,7 +35,7 @@ public class Human extends Critter {
     @Override
     public void simulateDay() {
         eat();
-       //commute(null);
+        commute();
         super.simulateDay();
     }
 
@@ -73,21 +73,22 @@ public class Human extends Critter {
      * A method that simulates the Human object commuting, which results in 
      * both air and water pollution based on the size of the vehicle
      */
-    public void commute(String vehicle) {
-        if (vehicle == "walk") {
+    public void commute() {
+        int randNum = rand.nextInt(4);
+        if (randNum == 0) {
             polluteAir(0);
             polluteWater(0);
         }
-        if (vehicle == "bike") {
+        if (randNum == 1) {
             polluteAir(0);
             polluteWater(0);
         }
-        if (vehicle == "car") {
+        if (randNum == 2) {
             float vehicleSize = size * 5;
             polluteAir(vehicleSize);
             polluteWater(vehicleSize/5);
         }
-        if (vehicle == "bus") {
+        if (randNum == 3) {
             float vehicleSize = size * 10;
             //human directly is not causing pollution but the bus still is
             polluteAir(vehicleSize/10);
@@ -99,7 +100,7 @@ public class Human extends Critter {
     //a method that makes the human pollute the air
     public void polluteAir() {
         //if the human pollutes the air by more than 90% of the air, the everything can't breathe
-        if (polluteAir(size) > 0.9) {
+        if (polluteAir(size) > 90) {
             for (int i = 0; i < plantEaters.length; i++) {
                 plantEaters[i].setCanBreathe(false);
             }

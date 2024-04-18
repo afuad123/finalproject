@@ -166,9 +166,10 @@ public class SimulationPane extends GridPane {
         float plantEaterSize = 0;
 
         for (int i = 0; i < model.getPlantEaters().size(); i++) {
-            plantEaterGrowthRate += model.getPlantEaters().get(i).getRate();
-            plantEaterSize += model.getPlantEaters().get(i).getSize();
-            foodNeed += model.getPlantEaters().get(i).getFoodNeed();
+            PlantEater plantToAnalyze = model.getPlantEaters().get(i);
+            plantEaterGrowthRate += plantToAnalyze.getRate();
+            plantEaterSize += plantToAnalyze.getSize();
+            foodNeed += plantToAnalyze.getFoodNeed();
         }
 
         plantEaterSize /= plantEaterPop;
