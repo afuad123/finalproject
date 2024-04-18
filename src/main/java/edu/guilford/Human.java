@@ -1,6 +1,13 @@
 package edu.guilford;
 
 import java.util.Random;
+/**
+ * A class that represents a Human object, which is a subclass of the Critter class
+ * A Human object can eat plants, plantEaters, and meatEaters, commute, and pollute the air and water
+ * @author A.Fuad
+ * @version 4/18/24
+ * @see Critter
+ */
 
 public class Human extends Critter {
 
@@ -22,7 +29,7 @@ public class Human extends Critter {
     private MeatEater meatEaters[];
 
     public Human(float size, float rate, float foodNeed, Plant plants[], PlantEater plantEaters[], MeatEater meatEaters[]) {
-        super(size, rate, foodNeed, true, true);
+        super(size, rate, foodNeed, true);
         this.plants = plants;
         this.plantEaters = plantEaters;
         this.meatEaters = meatEaters;
@@ -77,22 +84,18 @@ public class Human extends Critter {
         int randNum = rand.nextInt(4);
         if (randNum == 0) {
             polluteAir(0);
-            polluteWater(0);
         }
         if (randNum == 1) {
             polluteAir(0);
-            polluteWater(0);
         }
         if (randNum == 2) {
             float vehicleSize = size * 5;
             polluteAir(vehicleSize);
-            polluteWater(vehicleSize/5);
         }
         if (randNum == 3) {
             float vehicleSize = size * 10;
             //human directly is not causing pollution but the bus still is
             polluteAir(vehicleSize/10);
-            polluteWater(vehicleSize/10);
         }
     
     }
@@ -114,27 +117,6 @@ public class Human extends Critter {
     public float polluteAir(float amount) {
         float pollutionAmount = amount*5/100;
         return pollutionAmount;
-    }
-
-    //a method that makes the human pollute the water
-    public void polluteWater() {
-        //if the human pollutes the water by more than 50% of its size, the everything can't drink
-        if (polluteWater(size) > 0.9) {
-            for (int i = 0; i < plantEaters.length; i++) {
-                plantEaters[i].setCanDrink(false);
-            }
-            for (int i = 0; i < meatEaters.length; i++) {
-                meatEaters[i].setCanDrink(false);
-            }
-        }
-    }
-
-    public float polluteWater(float amount) {
-        float pollutionAmount = amount*5/100;
-        return pollutionAmount;
-    }
-
-    
-    
+    } 
     
 }

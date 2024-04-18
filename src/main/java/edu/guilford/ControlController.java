@@ -6,10 +6,10 @@ import javafx.scene.control.TextField;
 
 /**
  * A class that generates the control window that controls the simulation.
- * @Author A. Fuad
- * @Version 4/7/24
- * @See SimulationPane
- * @See SimulationModel
+ * @author A. Fuad
+ * @version 4/7/24
+ * @see SimulationPane
+ * @see SimulationModel
  */
 
 public class ControlController {

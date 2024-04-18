@@ -25,7 +25,7 @@ public class MeatEater extends Critter {
      * @param foodNeed the amount of food the object needs each day (in g)
      */
     public MeatEater(float size, float rate, float foodNeed, PlantEater[] plantEaters) {
-        super(size, rate, foodNeed, true, true);
+        super(size, rate, foodNeed, true);
         this.plantEaters = plantEaters;
         
     }

@@ -6,11 +6,11 @@ import java.util.Random;
 
 /**
  * This class is the model for the simulation. It contains starting meat eater, plant, and plant eater objects. The user can add more of these objects to the simulation.
- * @Author A. Fuad
- * @Version 4/7/24
- * @See SimulationPane
- * @See ControlController
- * @See InstructionPane
+ * @author A. Fuad
+ * @version 4/7/24
+ * @see SimulationPane
+ * @see ControlController
+ * @see InstructionPane
  */
 
 public class SimulationModel {
