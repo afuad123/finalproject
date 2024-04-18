@@ -9,7 +9,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * This class is the main driver for the Creature Simulation program. It creates
+ * the main window, the control window, and instruction window
+ * @Author A.Fuad
+ * @Version 4/18/24
  */
 public class CreatureDriver extends Application {
 
