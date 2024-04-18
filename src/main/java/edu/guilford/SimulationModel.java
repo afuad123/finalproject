@@ -64,9 +64,9 @@ public class SimulationModel {
         for (MeatEater me : meatEaters) {
             me.simulateDay();
         }
-        for (Human h : humans) {
-            h.simulateDay();
-        }
+        // for (Human h : humans) {
+        //     h.simulateDay();
+        // }
         
     }
 
