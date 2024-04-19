@@ -27,7 +27,7 @@ public class PlantEater extends Critter {
      * @param plants  an array of Plant objects that the object can eat
      */
     public PlantEater(float size, float rate, float foodNeed, Plant[] plants) {
-        super(size, rate, foodNeed, true);
+        super(size, rate, foodNeed);
         this.plants = plants;
     }
 

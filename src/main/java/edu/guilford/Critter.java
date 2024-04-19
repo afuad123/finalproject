@@ -19,13 +19,6 @@ public abstract class Critter extends Creature {
      */
     protected float foodEaten;
 
-    /**
-     * A boolean that is true if the object can breathe and false if it cannot
-     * If the object cannot breathe, it will die 
-     */
-    protected boolean canBreathe;
-   
-
 
     //GETTERS AND SETTERS
     /**
@@ -43,12 +36,7 @@ public abstract class Critter extends Creature {
         this.foodNeed = foodNeed;
     }
 
-    /** 
-     * A setter for canBreathe
-     */
-    public void setCanBreathe(boolean canBreathe) {
-        this.canBreathe = canBreathe;
-    }
+   
 
     //CONSTRUCTOR
     /**
@@ -56,12 +44,10 @@ public abstract class Critter extends Creature {
      * @param size the initial size of the object (in g)
      * @param rate  the initial rate of growth of the object (in g/day)
      * @param foodNeed the amount of food the object needs each day (in g)
-     * @param canBreathe a boolean that is true if the object can breathe and false if it cannot
      */
-    public Critter(float size, float rate, float foodNeed, boolean canBreathe) {
+    public Critter(float size, float rate, float foodNeed) {
         super(size, rate);
         this.foodNeed = foodEaten = (15*size)/100; //needs to eat 15% of its size to survive
-        canBreathe = true;
     }
 
     //METHODS
@@ -73,7 +59,7 @@ public abstract class Critter extends Creature {
     @Override
     public void simulateDay() {
         super.simulateDay();
-        if (foodNeed > foodEaten || !canBreathe) {
+        if (foodNeed > foodEaten) {
             die();
         } else {
             foodEaten = 0;

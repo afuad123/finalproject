@@ -29,7 +29,7 @@ public class Human extends Critter {
     private MeatEater meatEaters[];
 
     public Human(float size, float rate, float foodNeed, Plant plants[], PlantEater plantEaters[], MeatEater meatEaters[]) {
-        super(size, rate, foodNeed, true);
+        super(size, rate, foodNeed);
         this.plants = plants;
         this.plantEaters = plantEaters;
         this.meatEaters = meatEaters;
@@ -103,20 +103,6 @@ public class Human extends Critter {
             polluteAir(vehicleSize/10);
         }
     
-    }
-
-    //a method that makes the human pollute the air
-    public void polluteAir() {
-        //if the human pollutes the air by more than 90% of the air, the everything can't breathe
-        if (polluteAir(size) > 90) {
-            for (int i = 0; i < plantEaters.length; i++) {
-                plantEaters[i].setCanBreathe(false);
-            }
-            for (int i = 0; i < meatEaters.length; i++) {
-                meatEaters[i].setCanBreathe(false);
-            }
-        }
-
     }
 
     public float polluteAir(float amount) {
