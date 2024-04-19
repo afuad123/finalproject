@@ -1,0 +1,52 @@
+@options
+@packages
+@argfile
+--class-path
+'/Users/adrita/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19.jar:/Users/adrita/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar:/Users/adrita/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19.jar:/Users/adrita/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar'
+--module-path
+'/Users/adrita/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19-mac.jar:/Users/adrita/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19-mac.jar:/Users/adrita/Documents/CTIS310/finalproject/target/classes:/Users/adrita/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19-mac.jar:/Users/adrita/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19-mac.jar'
+--patch-module
+edu.guilford='/Users/adrita/Documents/CTIS310/finalproject/src/main/java'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+--module-source-path
+'/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'finalproject 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'finalproject 1.0-SNAPSHOT API'
+edu.guilford
+'/Users/adrita/Documents/CTIS310/finalproject/src/main/java/module-info.java'
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/tag-search-index.js = 1713556077045
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/overview-tree.html = 1713556077017
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/module-search-index.js = 1713556077043
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/index.html = 1713556077069
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/package-search-index.js = 1713556077043
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/link.svg = 1713556077080
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/index-all.html = 1713556077066
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/allpackages-index.html = 1713556077041
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/member-search-index.js = 1713556077044
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/copy.svg = 1713556077079
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/script.js = 1713556077078
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/stylesheet.css = 1713556077076
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/search-page.js = 1713556077083
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/help-doc.html = 1713556077074
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/element-list = 1713556076923
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/search.html = 1713556077068
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/allclasses-index.html = 1713556077039
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/type-search-index.js = 1713556077043
+/Users/adrita/Documents/CTIS310/finalproject/target/site/apidocs/search.js = 1713556077082

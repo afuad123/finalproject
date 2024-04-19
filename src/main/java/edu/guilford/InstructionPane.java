@@ -12,5 +12,12 @@ public class InstructionPane {
 
     @FXML
     private TextArea textArea;
+
+    /**
+     * A method that initializes the instruction pane
+     */
+    public InstructionPane() {
+        
+    }
     
 }

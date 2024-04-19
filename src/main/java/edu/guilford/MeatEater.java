@@ -3,10 +3,10 @@ package edu.guilford;
 import java.util.Random;
 /**
  * A class that represents a meat eater object in the simulation
- * @Author A. Fuad
- * @Version 2/29/24
- * @See Critter
- * @See PlantEater
+ * @author A. Fuad
+ * @version 2/29/24
+ * @see Critter
+ * @see PlantEater
  */
 public class MeatEater extends Critter {
 
@@ -23,6 +23,7 @@ public class MeatEater extends Critter {
      * @param size the initial size of the object (in g)
      * @param rate  the initial rate of growth of the object (in g/day)
      * @param foodNeed the amount of food the object needs each day (in g)
+     * @param plantEaters the array of plant eater objects that the meat eater object can chase and eat
      */
     public MeatEater(float size, float rate, float foodNeed, PlantEater[] plantEaters) {
         super(size, rate, foodNeed);

@@ -25,6 +25,12 @@ public class ControlController {
      */
     private SimulationModel model;
 
+    /**
+     * A constructor that initializes the control controller
+     */
+    public ControlController() {
+    }
+
     @FXML
     /**
      * A button that clears the SimulationPane
@@ -176,7 +182,6 @@ public class ControlController {
 
     /**
      * A method that clears the pane of text
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void clearPane() {
@@ -184,7 +189,6 @@ public class ControlController {
     }
     /**
      * A method that restarts the simulation 
-     * @param e the event that triggers the method (a button click)
      */
     @FXML 
     public void restartSimulation() {
@@ -194,51 +198,75 @@ public class ControlController {
 
     /**
      * A method that adds a new plant object to the simulation
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void submitPlant() {
         float size = Float.parseFloat(plantSize.getText());
         float rate = Float.parseFloat(plantRate.getText());
+        try {
+            if (size < 0 || rate < 0) {
+                throw new NegativeNumberException("Size and rate must be positive");
+            }
+        } catch (NegativeNumberException e) {
+            System.out.println(e.getMessage());
+        }
         simulationPane.addPlant(size, rate, model);
-    }
+        }
+    
 
     /**
      * A method that adds a new plant eater object to the simulation
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void submitPlantEater() {
         float size = Float.parseFloat(plantEaterSize.getText());
         float rate = Float.parseFloat(plantEaterRate.getText());
+        try {
+            if (size < 0 || rate < 0) {
+                throw new NegativeNumberException("Size and rate must be positive");
+            }
+        } catch (NegativeNumberException e) {
+            System.out.println(e.getMessage());
+        }
         simulationPane.addPlantEater(size, rate, model);
     }
 
     /**
      * A method that adds a new meat eater object to the simulation
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void submitMeatEater() {
         float size = Float.parseFloat(meatEaterSize.getText());
         float rate = Float.parseFloat(meatEaterRate.getText());
+        try {
+            if (size < 0 || rate < 0) {
+                throw new NegativeNumberException("Size and rate must be positive");
+            }
+        } catch (NegativeNumberException e) {
+            System.out.println(e.getMessage());
+        }
         simulationPane.addMeatEater(size, rate, model);
     }
 
     /**
      * A method that adds a new human object to the simulation
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void submitHuman() {
         float size = Float.parseFloat(humanSize.getText());
         float rate = Float.parseFloat(humanRate.getText());
+        try {
+            if (size < 0 || rate < 0) {
+                throw new NegativeNumberException("Size and rate must be positive");
+            }
+        } catch (NegativeNumberException e) {
+            System.out.println(e.getMessage());
+        }
         simulationPane.addHuman(size, rate, model);
     }
 
     /**
      * A method that makes the simulation experience a day
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void simulateDay() {
@@ -247,7 +275,6 @@ public class ControlController {
 
     /**
      * A method that allows the user to view the stats of the plant objects after simulating a day
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void viewPlantStats() {
@@ -256,7 +283,6 @@ public class ControlController {
 
     /**
      * A method that allows the user to view the stats of the plant eater objects after simulating a day
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void viewPlantEaterStats() {
@@ -265,7 +291,6 @@ public class ControlController {
 
     /**
      * A method that allows the user to view the stats of the meat eater objects after simulating a day
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void viewMeatEaterStats() {
@@ -274,7 +299,6 @@ public class ControlController {
 
     /**
      * A method that allows the user to view the stats of the human objects after simulating a day
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void viewHumanStats() {
@@ -283,31 +307,82 @@ public class ControlController {
 
     /**
      * A method that makes a plant eater object chew a plant object
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void chew() {
         simulationPane.chew(model);
+        try {
+            if (model.getPlants().size() == 0) {
+                throw new NoPlantException("There are no plants to chew");
+            }
+        } catch (NoPlantException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
      * A method that makes a meat eater object eat a plant eater object
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void eat() {
         simulationPane.eat(model);
+        try {
+            if (model.getPlantEaters().size() == 0) {
+                throw new NoPlantEaterException("There are no plant eaters to eat");
+            }
+        } catch (NoPlantEaterException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     /**
      * A method that makes a human object hunt
-     * @param e the event that triggers the method (a button click)
      */
     @FXML
     public void hunt() {
         simulationPane.hunt(model);
+        try {
+            if (model.getMeatEaters().size() == 0) {
+                throw new NoMeatEaterException("There are no meat eaters to eat");
+            }
+            if (model.getPlantEaters().size() == 0) {
+                throw new NoPlantEaterException("There are no plant eaters to eat");
+            }
+            if (model.getPlants().size() == 0) {
+                throw new NoPlantException("There are no plants to chew");
+            }
+        } catch (NoMeatEaterException e) {
+            System.out.println(e.getMessage());
+        } catch (NoPlantEaterException e) {
+            System.out.println(e.getMessage());
+        } catch (NoPlantException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    private class NegativeNumberException extends RuntimeException {
+        public NegativeNumberException(String message) {
+            super(message);
+        }
+    }
+    private class NoPlantException extends RuntimeException {
+        public NoPlantException(String message) {
+            super(message);
+        }
+    }
+    private class NoPlantEaterException extends RuntimeException {
+        public NoPlantEaterException(String message) {
+            super(message);
+        }
+    }
+    private class NoMeatEaterException extends RuntimeException {
+        public NoMeatEaterException(String message) {
+            super(message);
+        }
     }
 
     
 
 }
+

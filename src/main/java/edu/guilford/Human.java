@@ -3,7 +3,7 @@ package edu.guilford;
 import java.util.Random;
 /**
  * A class that represents a Human object, which is a subclass of the Critter class
- * A Human object can eat plants, plantEaters, and meatEaters, commute, and pollute the air and water
+ * A Human object can eat plants, plantEaters, and meatEaters, commute, and pollute the air
  * @author A.Fuad
  * @version 4/18/24
  * @see Critter
@@ -28,6 +28,15 @@ public class Human extends Critter {
      */
     private MeatEater meatEaters[];
 
+    /**
+     * A constructor that initializes a Human object with a size, growth rate, amount of food needed, and arrays of Plant, PlantEater, and MeatEater objects
+     * @param size the initial size of the object (in g)
+     * @param rate the initial rate of growth of the object (in g/day)
+     * @param foodNeed the amount of food the object needs each day (in g)
+     * @param plants an array of Plant objects that the human can eat
+     * @param plantEaters an array of PlantEater objects that the human can eat
+     * @param meatEaters an array of MeatEater objects that the human can eat
+     */
     public Human(float size, float rate, float foodNeed, Plant plants[], PlantEater plantEaters[], MeatEater meatEaters[]) {
         super(size, rate, foodNeed);
         this.plants = plants;
@@ -45,12 +54,10 @@ public class Human extends Critter {
         super.simulateDay();
     }
 
-    /**
-     * A method that simulates the Human object eating; it chases/harvests a random number of food objects and eats them
-     * A human can chase 1-3 plantEaters a day and 1-2 meatEaters a day, with a 50% chance of catching each
-     * A human can also harvest 5 plants a day
-     */
-
+   /**
+    * A method that simulates the Human object eating a plant object
+    * @param randPlant the index of the plant object in the plants array that the Human object will eat
+    */
     public void eatPlant(int randPlant) {
         for (int i = 0; i < 5; i++) {
             //int plantToBeHarvested = rand.nextInt(plants.length);
@@ -59,6 +66,10 @@ public class Human extends Critter {
         }
     }
 
+    /**
+     * A method that simulates the Human object eating a plantEater object
+     * @param randPlantEater the index of the plantEater object in the plantEaters array that the Human object will eat
+     */
     public void eatPlantEater(int randPlantEater) {
         int numPlantEaters = (rand.nextInt(3) + 1);
         for (int i = 0; i < numPlantEaters; i++) {
@@ -70,6 +81,10 @@ public class Human extends Critter {
         }
     }
 
+    /**
+     * A method that simulates the Human object eating a meatEater object
+     * @param randMeatEater the index of the meatEater object in the meatEaters array that the Human object will eat
+     */
     public void eatMeatEater(int randMeatEater) {
         int numMeatEaters = (rand.nextInt(2) + 1);
         for (int i = 0; i < numMeatEaters; i++) {
@@ -105,6 +120,11 @@ public class Human extends Critter {
     
     }
 
+    /**
+     * A method that simulates the Human object polluting the air
+     * @param amount the amount of pollution that the Human object will cause
+     * @return the amount of pollution that the Human object caused
+     */
     public float polluteAir(float amount) {
         float pollutionAmount = amount*5/100;
         return pollutionAmount;

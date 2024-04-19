@@ -1,12 +1,16 @@
+edu/guilford/ControlController$NoMeatEaterException.class
 edu/guilford/ControlController.class
 edu/guilford/PlantEater.class
 edu/guilford/Critter.class
 edu/guilford/Human.class
 edu/guilford/SimulationPane.class
+edu/guilford/ControlController$NoPlantException.class
 edu/guilford/SimulationModel.class
 edu/guilford/MeatEater.class
+edu/guilford/ControlController$NoPlantEaterException.class
 edu/guilford/InstructionPane.class
 module-info.class
 edu/guilford/CreatureDriver.class
 edu/guilford/Plant.class
+edu/guilford/ControlController$NegativeNumberException.class
 edu/guilford/Creature.class

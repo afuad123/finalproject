@@ -28,7 +28,7 @@
   </rowConstraints>
    <children>
       <Button fx:id="plantEaterButton" mnemonicParsing="false" onAction="#submitPlantEater" text="Add Plant Eater" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Ecosystem Simulator Game" />
+      <Label text="Ecosystem Simulator " />
       <ImageView fitHeight="81.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
          <image>
             <Image url="@images.png" />
@@ -54,7 +54,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="10.0" layoutY="19.0" text="Specify plant eater  rate" />
+                  <Label layoutX="10.0" layoutY="19.0" text="Specify plant eater rate" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
