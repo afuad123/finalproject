@@ -44,10 +44,7 @@ public class PlantEater extends Critter {
         size += amount;
     }
 
-   
-    // public void eaten() {
-    //     die();
-    // }
+
 
     /**
      * A method that simulates a day in the life of the PlantEater; it first chews on a randomly determined number of plants; 
@@ -56,12 +53,12 @@ public class PlantEater extends Critter {
      */
     @Override
     public void simulateDay() {
-        int numPlants = (rand.nextInt(5) + 1);
-        //int numPlants = (int) (plants.length * (rand.nextFloat(2/100)));
-        //float numPlants = (plants.length * (rand.nextFloat(2/100)));
-        for (int i = 0; i < numPlants; i++) {
-            chew(plants[rand.nextInt(plants.length)]);
-        }
+        // int numPlants = (rand.nextInt(5) + 1);
+        // //int numPlants = (int) (plants.length * (rand.nextFloat(2/100)));
+        // //float numPlants = (plants.length * (rand.nextFloat(2/100)));
+        // for (int i = 0; i < numPlants; i++) {
+        //     chew(plants[rand.nextInt(plants.length)]);
+        // }
         super.simulateDay();
     }
 

@@ -37,7 +37,6 @@ public class MeatEater extends Critter {
      */
     @Override
     public void simulateDay() {
-        eat();
         super.simulateDay();
     }
 
