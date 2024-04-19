@@ -290,26 +290,26 @@ public class SimulationPane extends GridPane {
         Human humanThatEats = model.getHumans().get(model.getHumans().size() - 1);
         int randNum = rand.nextInt(3);
         if (randNum == 0) {
-            Plant randPlant = model.getPlants().get(rand.nextInt(model.getPlants().size()));
-            humanThatEats.eat(randPlant.getSize());
+            int randPlant = rand.nextInt(model.getPlants().size());
+            humanThatEats.eatPlant(randPlant);
             model.getPlants().remove(randPlant);
-            Label testLabel = new Label("Human ate a plant");
+            Label testLabel = new Label("Human hunted and ate a plant");
             this.add(testLabel, 0, row);
-            row++;
+            row++;  
         } else if (randNum == 1) {
-            PlantEater randPlantEater = model.getPlantEaters().get(rand.nextInt(model.getPlantEaters().size()));
-            humanThatEats.eat(randPlantEater.getSize());
+            int randPlantEater = rand.nextInt(model.getPlantEaters().size());
+            humanThatEats.eatPlantEater(randPlantEater);
             model.getPlantEaters().remove(randPlantEater);
-            Label testLabel = new Label("Human ate a plant eater");
+            Label testLabel = new Label("Human hunted and ate a plant eater");
             this.add(testLabel, 0, row);
-            row++;
+            row++;  
         } else {
-            MeatEater randMeatEater = model.getMeatEaters().get(rand.nextInt(model.getMeatEaters().size()));
-            humanThatEats.eat(randMeatEater.getSize());
+            int randMeatEater = rand.nextInt(model.getMeatEaters().size());
+            humanThatEats.eatMeatEater(randMeatEater);
             model.getMeatEaters().remove(randMeatEater);
-            Label testLabel = new Label("Human ate a meat eater");
+            Label testLabel = new Label("Human hunted and ate a meat eater");
             this.add(testLabel, 0, row);
-            row++;
+            row++;  
         }
     }
 }

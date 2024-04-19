@@ -41,7 +41,6 @@ public class Human extends Critter {
      */
     @Override
     public void simulateDay() {
-        eat();
         commute();
         super.simulateDay();
     }
@@ -51,31 +50,35 @@ public class Human extends Critter {
      * A human can chase 1-3 plantEaters a day and 1-2 meatEaters a day, with a 50% chance of catching each
      * A human can also harvest 5 plants a day
      */
-    public void eat() {
-        // int numPlants = (rand.nextInt() * 3 + 1);
-        // int numMeat = (rand.nextInt() * 2 + 1);
-        int numPlants = (rand.nextInt(3) + 1);
-        int numMeat = (rand.nextInt(2) + 1);
-        for (int i = 0; i < numPlants; i++) {
-            if (rand.nextFloat() < 0.5) {
-            int plantToBeEaten = rand.nextInt(plants.length);
-            eat(plants[plantToBeEaten].getSize());
-            plants[plantToBeEaten].die();
-            }
-        }
-        for (int i = 0; i < numMeat; i++) {
-            if (rand.nextFloat() < 0.5) {
-                int meatToBeEaten = rand.nextInt(meatEaters.length);
-                eat(meatEaters[meatToBeEaten].getSize());
-                meatEaters[meatToBeEaten].die();
-            }
-        }
+
+    public void eatPlant(int randPlant) {
         for (int i = 0; i < 5; i++) {
-            int plantToBeHarvested = rand.nextInt(plants.length);
-            eat(plants[plantToBeHarvested].getSize());
-            plants[plantToBeHarvested].die();
+            //int plantToBeHarvested = rand.nextInt(plants.length);
+            eat(plants[randPlant].getSize());
+            plants[randPlant].die();
         }
-        polluteAir(size);
+    }
+
+    public void eatPlantEater(int randPlantEater) {
+        int numPlantEaters = (rand.nextInt(3) + 1);
+        for (int i = 0; i < numPlantEaters; i++) {
+            if (rand.nextFloat() < 0.5) {
+                //int plantEaterToBeEaten = rand.nextInt(plantEaters.length);
+                eat(plantEaters[randPlantEater].getSize());
+                plantEaters[randPlantEater].die();
+            }
+        }
+    }
+
+    public void eatMeatEater(int randMeatEater) {
+        int numMeatEaters = (rand.nextInt(2) + 1);
+        for (int i = 0; i < numMeatEaters; i++) {
+            if (rand.nextFloat() < 0.5) {
+                //int meatToBeEaten = rand.nextInt(meatEaters.length);
+                eat(meatEaters[randMeatEater].getSize());
+                meatEaters[randMeatEater].die();
+            }
+        }
     }
 
     /**
